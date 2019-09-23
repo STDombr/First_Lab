@@ -2,48 +2,102 @@
 
 using namespace std;
 
-struct date
+template <typename T>
+struct Node
 {
-    int day;
-    int month;
-    int year;
+    T data;
+    Node *next;
+    Node *prev;
 };
 
+template <typename T>
 class List
 {
 private:
-    date array_of_date[100];
-    int i=-1;
+    Node<T> *head,*tail;
+    int size;
 public:
-    void Add_date(int date_day,int date_month,int date_year)
+    void remove()
     {
-        i++;
-        array_of_date[i].day=date_day;
-        array_of_date[i].month=date_month;
-        array_of_date[i].year=date_year;
-    }
-    void Print_one_date(int j)
-    {
-        if (j<=i)
-        {
-            cout << array_of_date[j].day << ".";
-            cout << array_of_date[j].month << ".";
-            cout << array_of_date[j].year;
-            cout << endl;
-        } else
-            cout<<"Error"<<endl;
-    }
-    void Print_all_date()
-    {
-        for (int j=0;j<=i;j++)
-            Print_one_date(j);
+        head=NULL;
+        tail=NULL;
+        size=0;
     }
 
+    void add(T data)
+    {
+        Node<T>* node = new Node<T>;
+        if (head==NULL)
+        {
+            node->data=data;
+            node->prev=NULL;
+            node->next=NULL;
+            head=node;
+            tail=node;
+        }
+        else
+        {
+            node->data=data;
+            node->next=NULL;
+            node->prev=tail;
+            tail=node;
+        }
+        size++;
+    }
+
+    void print()
+    {
+        Node<T>* node = head;
+        for(int i=0;i<size;i++)
+        {
+            cout << node->data << " ";
+            node=node->next;
+        }
+    }
+
+    void popTail()
+    {
+        if (head==NULL)
+            return;
+        if (head==tail)
+        {
+            delete head;
+            head=NULL;
+            tail=NULL;
+            size=0;
+            return;
+        }
+        Node<T> *temp = tail;
+        tail=tail->prev;
+        delete temp;
+        tail->next=NULL;
+        size--;
+    }
+
+    void popHead()
+    {
+        if (head==NULL)
+            return;
+        if (head==tail)
+        {
+            delete head;
+            head=NULL;
+            tail=NULL;
+            size=0;
+            return;
+        }
+        Node<T> *temp=head;
+        head=head->next;
+        delete temp;
+        head->prev=NULL;
+        size--;
+    }
 };
 
 int main()
 {
-    List Time;
-    Time.Add_date(7,6,2001);
-    Time.Print_all_date();
+    List<int> Time;
+    Time.add(4);
+    Time.print();
+
 }
