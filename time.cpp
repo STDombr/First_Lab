@@ -139,6 +139,22 @@ public:
         if (b>left)
             quicksort(left,b);
     }
+
+    void insertionsort()
+    {
+        int i,key,j;
+        for (i=2;i<=size;i++)
+        {
+            key=element(i);
+            j=i-1;
+            while (j>=1 && element(j)>key)
+            {
+                elect_element(j+1)->data=elect_element(j)->data;
+                j--;
+            }
+            elect_element(j+1)->data=key;
+        }
+    }
 };
 
 int main()
@@ -151,7 +167,7 @@ int main()
         cin>>a;
         Time.add(a);
     }
-    Time.quicksort();
+    Time.insertionsort();
     Time.print();
 
 }
