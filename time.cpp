@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -242,6 +243,22 @@ public:
             heap(i,0);
         }
     }
+
+    void selectionsort()
+    {
+        int i,j,min;
+        for (i=0;i<size-1;i++)
+        {
+            min=i;
+            for (j=i+1;j<size;j++)
+                if (element(j+1)<element(min+1))
+                    min=j;
+            T temp;
+            temp=elect_element(min+1)->data;
+            elect_element(min+1)->data=elect_element(i+1)->data;
+            elect_element(i+1)->data=temp;
+        }
+    }
 };
 
 int main()
@@ -254,7 +271,7 @@ int main()
         cin>>a;
         Time.add(a);
     }
-    Time.heapsort();
+    Time.selectionsort();
     Time.print();
 
 }
