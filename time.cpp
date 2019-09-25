@@ -155,6 +155,60 @@ public:
             elect_element(j+1)->data=key;
         }
     }
+
+    void merge(int left,int m,int right)
+    {
+        int i=1,j=1,k=left;
+        int n1=m-left+1;
+        int n2=right-m;
+        List L,R;
+        for (int y=1;y<=n1;y++)
+            L.add(element(left+y-1));
+        for (int y=1;y<=n2;y++)
+            R.add(element(m+y));
+        while (i<=n1 && j<=n2)
+        {
+            if (L.element(i)<R.element(j))
+            {
+                elect_element(k)->data=L.element(i);
+                i++;
+            }
+            else
+            {
+                elect_element(k)->data=R.element(j);
+                j++;
+            }
+            k++;
+        }
+
+        while (i<=n1)
+        {
+            elect_element(k)->data=L.element(i);
+            i++;
+            k++;
+        }
+        while (j<=n2)
+        {
+            elect_element(k)->data=R.element(j);
+            j++;
+            k++;
+        }
+        L.remove();
+        R.remove();
+    }
+
+    void mergesort(int left=1,int right=-2)
+    {
+        if (right==-2)
+            right=size;
+        if (left<right)
+        {
+            int m=(left+right)/2;
+            mergesort(left,m);
+            mergesort(m+1,right);
+            merge(left,m,right);
+        }
+    }
 };
 
 int main()
@@ -167,7 +221,7 @@ int main()
         cin>>a;
         Time.add(a);
     }
-    Time.insertionsort();
+    Time.mergesort();
     Time.print();
 
 }
