@@ -8,4 +8,4 @@ Stanislav Dombrovskyi
 1)
 Class to describe linked lists with sorting algorithms.
 Sorting algorithms:
-Merge sort, quicksort, insertion sort.
+Merge sort, quicksort, insertion sort, heapsort.
