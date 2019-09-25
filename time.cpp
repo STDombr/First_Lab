@@ -209,6 +209,39 @@ public:
             merge(left,m,right);
         }
     }
+
+    void heap(int n,int i)
+    {
+        int largest=i;
+        int left=i*2+1;
+        int right=i*2+2;
+        if (left<n && element(left+1)>element(largest+1))
+            largest=left;
+        if (right<n && element(right+1)>element(largest+1))
+            largest=right;
+        if (largest!=i)
+        {
+            T temp;
+            temp=elect_element(i+1)->data;
+            elect_element(i+1)->data=elect_element(largest+1)->data;
+            elect_element(largest+1)->data=temp;
+            heap(n,largest);
+        }
+    }
+
+    void heapsort()
+    {
+        for (int i=size/2-1;i>=0;i--)
+            heap(size,i);
+        for (int i=size-1;i>=0;i--)
+        {
+            T temp;
+            temp=elect_element(1)->data;
+            elect_element(1)->data=elect_element(i+1)->data;
+            elect_element(i+1)->data=temp;
+            heap(i,0);
+        }
+    }
 };
 
 int main()
@@ -221,7 +254,7 @@ int main()
         cin>>a;
         Time.add(a);
     }
-    Time.mergesort();
+    Time.heapsort();
     Time.print();
 
 }
