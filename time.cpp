@@ -14,8 +14,8 @@ template <typename T>
 class List
 {
 private:
-    Node<T> *head,*tail;
-    int size;
+    Node<T> *head=NULL,*tail=NULL;
+    int size=0;
 public:
     void remove()
     {
@@ -40,6 +40,7 @@ public:
             node->data=data;
             node->next=NULL;
             node->prev=tail;
+            tail->next=node;
             tail=node;
         }
         size++;
@@ -92,12 +93,65 @@ public:
         head->prev=NULL;
         size--;
     }
+
+    T element(int position)
+    {
+        Node<T> *temp=head;
+        if (position<=size)
+            for (int i=1;i<position;i++)
+                temp=temp->next;
+        return temp->data;
+    }
+
+    Node<T> *elect_element(int position)
+    {
+        Node<T> *temp=head;
+        if (position<=size)
+            for (int i=1;i<position;i++)
+                temp=temp->next;
+        return temp;
+    }
+
+    void quicksort(int a=1,int b=-2)
+    {
+        if (b==-2)
+            b=size;
+        int left=a,right=b;
+        T piv=element((left+right)/2);
+        while(left<=right)
+        {
+            while (element(left)<piv)
+                left++;
+            while (element(right)>piv)
+                right--;
+            if (left<=right)
+            {
+                T temp2;
+                temp2=elect_element(left)->data;
+                elect_element(left)->data=elect_element(right)->data;
+                elect_element(right)->data=temp2;
+                left++;
+                right--;
+            }
+        }
+        if (a<right)
+            quicksort(a,right);
+        if (b>left)
+            quicksort(left,b);
+    }
 };
 
 int main()
 {
+    int a,n;
+    cin>>n;
     List<int> Time;
-    Time.add(4);
+    for(int i=0;i<n;i++)
+    {
+        cin>>a;
+        Time.add(a);
+    }
+    Time.quicksort();
     Time.print();
 
 }
