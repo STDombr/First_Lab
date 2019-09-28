@@ -1,6 +1,7 @@
 #include <iostream>
 #include "List.h"
 
+//конструктор для класу List
 template <typename T>
 List<T>::List()
 {
@@ -9,6 +10,7 @@ List<T>::List()
     size=0;
 }
 
+//функція для видалення всієї інформації
 template <typename T>
 void List<T>::remove()
 {
@@ -17,6 +19,7 @@ void List<T>::remove()
     size=0;
 }
 
+//функція для добавляння одного листа
 template <typename T>
 void List<T>::add(T data)
 {
@@ -40,6 +43,7 @@ void List<T>::add(T data)
     size++;
 }
 
+//функція для виведення всього класу
 template <typename T>
 void List<T>::print()
 {
@@ -51,6 +55,7 @@ void List<T>::print()
     }
 }
 
+//функція для видалення листа tail
 template <typename T>
 void List<T>::popTail()
 {
@@ -71,6 +76,7 @@ void List<T>::popTail()
     size--;
 }
 
+//функція для видалення листа head
 template <typename T>
 void List<T>::popHead()
 {
@@ -91,6 +97,7 @@ void List<T>::popHead()
     size--;
 }
 
+//функція для повернення елемента з і індексом
 template <typename T>
 T List<T>::element(int position)
 {
@@ -101,6 +108,7 @@ T List<T>::element(int position)
     return temp->data;
 }
 
+//функція для повернення листа з і інлексом
 template <typename T>
 Node<T> *List<T>::elect_element(int position)
 {
@@ -111,6 +119,7 @@ Node<T> *List<T>::elect_element(int position)
     return temp;
 }
 
+//алгоритм сортування quicksort
 template <typename T>
 void List<T>::quicksort(int a,int b)
 {
@@ -140,6 +149,7 @@ void List<T>::quicksort(int a,int b)
         quicksort(left,b);
 }
 
+//алгоритм сортування insertionsort
 template <typename T>
 void List<T>::insertionsort()
 {
@@ -157,6 +167,7 @@ void List<T>::insertionsort()
     }
 }
 
+//алгоритм сортування mergesort
 template <typename T>
 void List<T>::merge(int left,int m,int right)
 {
@@ -213,6 +224,7 @@ void List<T>::mergesort(int left,int right)
     }
 }
 
+//алгоритм сортування heapsort
 template <typename T>
 void List<T>::heap(int n,int i)
 {
@@ -248,6 +260,7 @@ void List<T>::heapsort()
     }
 }
 
+//алгоритм сортування selectionsort
 template <typename T>
 void List<T>::selectionsort()
 {
