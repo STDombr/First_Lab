@@ -45,14 +45,16 @@ void List<T>::add(T data)
 
 //функція для виведення всього класу
 template <typename T>
-void List<T>::print()
+void List<T>::print1()
 {
     Node<T>* node = head;
+    std::cout<<std::endl;
     for(int i=0;i<size;i++)
     {
         std::cout << node->data << " ";
         node=node->next;
     }
+    std::cout<<std::endl;
 }
 
 //функція для видалення листа tail
@@ -153,7 +155,8 @@ void List<T>::quicksort(int a,int b)
 template <typename T>
 void List<T>::insertionsort()
 {
-    int i,key,j;
+    int i,j;
+    T key;
     for (i=2;i<=size;i++)
     {
         key=element(i);
@@ -276,4 +279,10 @@ void List<T>::selectionsort()
         elect_element(min+1)->data=elect_element(i+1)->data;
         elect_element(i+1)->data=temp;
     }
+}
+
+template <typename T>
+Node<T> *List<T>::gethead()
+{
+    return head;
 }
