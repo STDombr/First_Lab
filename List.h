@@ -25,7 +25,7 @@ public:
     //функція для добавляння одного листа
     void add(T);
     //функція для виведення всього класу
-    void print();
+    void print1();
     //функція для видалення листа tail
     void popTail();
     //функція для видалення листа head
@@ -46,6 +46,7 @@ public:
     void heapsort();
     //алгоритм сортування selectionsort
     void selectionsort();
+    Node<T> *gethead();
 };
 
 #endif //FIRST_LAB_LIST_H
