@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-//#include "Time.cpp"
 #include "List.cpp"
 
 //функція для тестування insertsort
@@ -211,10 +210,10 @@ void test_Time()
     Time<int> t1,t2;
     std::cout<<"System time T1: ";
     t1.print();
-    std::cout<<"Random time T2: ";
+    std::cout<<std::endl<<"Random time T2: ";
     t2.random();
     t2.print();
-    std::cout<<"Difference between T1 and T2 : "<<std::endl;
+    std::cout<<std::endl<<"Difference between T1 and T2 : "<<std::endl;
     d=difference(t1,t2);
     difference_in_hours(d);
     difference_in_minutes(d);
@@ -222,7 +221,7 @@ void test_Time()
     std::cout<<"T1-difference : ";
     t1.minus_to_time(d);
     t1.print();
-    std::cout<<"T1+difference : ";
+    std::cout<<std::endl<<"T1+difference : ";
     t1.plus_to_time(d);
     t1.plus_to_time(d);
     t1.print();
@@ -234,12 +233,12 @@ template <typename T>
 void test_Date()
 {
     Date<int> d1,d2;
-    std::cout<<"System date D1: ";
+    std::cout<<std::endl<<"System date D1: ";
     d1.print();
-    std::cout<<"Random date D2: ";
+    std::cout<<std::endl<<"Random date D2: ";
     d2.random();
     d2.print();
-    std::cout<<"Day of the week D1: ";
+    std::cout<<std::endl<<"Day of the week D1: ";
     d1.weekday();
     std::cout<<"Day of the week D2: ";
     d2.weekday();
