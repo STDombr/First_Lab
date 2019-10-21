@@ -59,6 +59,7 @@ void List<T>::print()
     std::cout<<std::endl;
 }
 
+//функція для виведення всього класу при типі даних Time
 template <>
 inline void List<Time<int>>::print()
 {
@@ -72,6 +73,7 @@ inline void List<Time<int>>::print()
     std::cout<<std::endl;
 }
 
+//функція для виведення всього класу при типі даних Date
 template <>
 inline void List<Date<int>>::print()
 {
@@ -325,6 +327,7 @@ void List<T>::random()
         add(rand());
 }
 
+//функція для рандомного заповнення елементів для типу double
 template <>
 inline void List<double>::random()
 {
@@ -333,6 +336,7 @@ inline void List<double>::random()
         add(1.1*rand());
 }
 
+//функція для рандомного заповнення елементів для типу string
 template <>
 inline void List<std::string>::random()
 {
@@ -347,6 +351,7 @@ inline void List<std::string>::random()
     }
 }
 
+//функція для рандомного заповнення елементів для типу Time
 template <>
 inline void List<Time<int>>::random()
 {
@@ -359,6 +364,7 @@ inline void List<Time<int>>::random()
     }
 }
 
+//функція для рандомного заповнення елементів для типy Date
 template <>
 inline void List<Date<int>>::random()
 {
@@ -371,6 +377,7 @@ inline void List<Date<int>>::random()
     }
 }
 
+//Конструктор для класу Array
 template <typename T>
 Array<T>::Array()
 {
@@ -379,6 +386,7 @@ Array<T>::Array()
     max_size=30;
 }
 
+//функція для видалення класу
 template <typename T>
 void Array<T>::remove()
 {
@@ -414,6 +422,7 @@ void Array<T>::print()
     std::cout<<std::endl;
 }
 
+//функція для виведення всього класу для типу Time
 template <>
 inline void Array<Time<int>>::print()
 {
@@ -423,6 +432,7 @@ inline void Array<Time<int>>::print()
     std::cout<<std::endl;
 }
 
+//функція для виведення всього класу для типу Date
 template <>
 inline void Array<Date<int>>::print()
 {
@@ -454,7 +464,7 @@ void Array<T>::popHead()
     }
 }
 
-//
+
 template <typename T>
 T Array<T>::element(int position)
 {
@@ -632,6 +642,7 @@ void Array<T>::random()
         add(rand());
 }
 
+//функція для рандомного заповнення елементів для типу double
 template <>
 inline void Array<double>::random()
 {
@@ -640,6 +651,7 @@ inline void Array<double>::random()
         add(1.1*rand());
 }
 
+//функція для рандомного заповнення елементів для типу string
 template <>
 inline void Array<std::string>::random()
 {
@@ -654,6 +666,7 @@ inline void Array<std::string>::random()
     }
 }
 
+//функція для рандомного заповнення елементів для типу Time
 template <>
 inline void Array<Time<int>>::random()
 {
@@ -666,6 +679,7 @@ inline void Array<Time<int>>::random()
     }
 }
 
+//функція для рандомного заповнення елементів для типу Date
 template <>
 inline void Array<Date<int>>::random()
 {
