@@ -36,14 +36,13 @@ void menu()
     }
     if (i==1)
     {
-        std::cout<<std::endl<<std::endl;
+        std::cout<<std::endl;
         test_Time<int>();
     }
     if (i==2)
     {
-        std::cout<<std::endl<<std::endl;
+        std::cout<<std::endl;
         test_Date<int>();
-        menu();
     }
     menu();
 }
