@@ -122,86 +122,167 @@ first_lab/fast:
 	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/build
 .PHONY : first_lab/fast
 
-List.obj: List.cpp.obj
+Lists/sources/Array.obj: Lists/sources/Array.cpp.obj
 
-.PHONY : List.obj
-
-# target to build an object file
-List.cpp.obj:
-	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/List.cpp.obj
-.PHONY : List.cpp.obj
-
-List.i: List.cpp.i
-
-.PHONY : List.i
-
-# target to preprocess a source file
-List.cpp.i:
-	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/List.cpp.i
-.PHONY : List.cpp.i
-
-List.s: List.cpp.s
-
-.PHONY : List.s
-
-# target to generate assembly for a file
-List.cpp.s:
-	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/List.cpp.s
-.PHONY : List.cpp.s
-
-Test.obj: Test.cpp.obj
-
-.PHONY : Test.obj
+.PHONY : Lists/sources/Array.obj
 
 # target to build an object file
-Test.cpp.obj:
-	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Test.cpp.obj
-.PHONY : Test.cpp.obj
+Lists/sources/Array.cpp.obj:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.obj
+.PHONY : Lists/sources/Array.cpp.obj
 
-Test.i: Test.cpp.i
+Lists/sources/Array.i: Lists/sources/Array.cpp.i
 
-.PHONY : Test.i
+.PHONY : Lists/sources/Array.i
 
 # target to preprocess a source file
-Test.cpp.i:
-	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Test.cpp.i
-.PHONY : Test.cpp.i
+Lists/sources/Array.cpp.i:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.i
+.PHONY : Lists/sources/Array.cpp.i
 
-Test.s: Test.cpp.s
+Lists/sources/Array.s: Lists/sources/Array.cpp.s
 
-.PHONY : Test.s
+.PHONY : Lists/sources/Array.s
 
 # target to generate assembly for a file
-Test.cpp.s:
-	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Test.cpp.s
-.PHONY : Test.cpp.s
+Lists/sources/Array.cpp.s:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.s
+.PHONY : Lists/sources/Array.cpp.s
 
-Time.obj: Time.cpp.obj
+Lists/sources/List.obj: Lists/sources/List.cpp.obj
 
-.PHONY : Time.obj
+.PHONY : Lists/sources/List.obj
 
 # target to build an object file
-Time.cpp.obj:
-	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Time.cpp.obj
-.PHONY : Time.cpp.obj
+Lists/sources/List.cpp.obj:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Lists/sources/List.cpp.obj
+.PHONY : Lists/sources/List.cpp.obj
 
-Time.i: Time.cpp.i
+Lists/sources/List.i: Lists/sources/List.cpp.i
 
-.PHONY : Time.i
+.PHONY : Lists/sources/List.i
 
 # target to preprocess a source file
-Time.cpp.i:
-	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Time.cpp.i
-.PHONY : Time.cpp.i
+Lists/sources/List.cpp.i:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Lists/sources/List.cpp.i
+.PHONY : Lists/sources/List.cpp.i
 
-Time.s: Time.cpp.s
+Lists/sources/List.s: Lists/sources/List.cpp.s
 
-.PHONY : Time.s
+.PHONY : Lists/sources/List.s
 
 # target to generate assembly for a file
-Time.cpp.s:
-	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Time.cpp.s
-.PHONY : Time.cpp.s
+Lists/sources/List.cpp.s:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Lists/sources/List.cpp.s
+.PHONY : Lists/sources/List.cpp.s
+
+Lists/sources/Vector.obj: Lists/sources/Vector.cpp.obj
+
+.PHONY : Lists/sources/Vector.obj
+
+# target to build an object file
+Lists/sources/Vector.cpp.obj:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.obj
+.PHONY : Lists/sources/Vector.cpp.obj
+
+Lists/sources/Vector.i: Lists/sources/Vector.cpp.i
+
+.PHONY : Lists/sources/Vector.i
+
+# target to preprocess a source file
+Lists/sources/Vector.cpp.i:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.i
+.PHONY : Lists/sources/Vector.cpp.i
+
+Lists/sources/Vector.s: Lists/sources/Vector.cpp.s
+
+.PHONY : Lists/sources/Vector.s
+
+# target to generate assembly for a file
+Lists/sources/Vector.cpp.s:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.s
+.PHONY : Lists/sources/Vector.cpp.s
+
+Tests/Test.obj: Tests/Test.cpp.obj
+
+.PHONY : Tests/Test.obj
+
+# target to build an object file
+Tests/Test.cpp.obj:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Tests/Test.cpp.obj
+.PHONY : Tests/Test.cpp.obj
+
+Tests/Test.i: Tests/Test.cpp.i
+
+.PHONY : Tests/Test.i
+
+# target to preprocess a source file
+Tests/Test.cpp.i:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Tests/Test.cpp.i
+.PHONY : Tests/Test.cpp.i
+
+Tests/Test.s: Tests/Test.cpp.s
+
+.PHONY : Tests/Test.s
+
+# target to generate assembly for a file
+Tests/Test.cpp.s:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Tests/Test.cpp.s
+.PHONY : Tests/Test.cpp.s
+
+Time_and_Date/sources/Date.obj: Time_and_Date/sources/Date.cpp.obj
+
+.PHONY : Time_and_Date/sources/Date.obj
+
+# target to build an object file
+Time_and_Date/sources/Date.cpp.obj:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.obj
+.PHONY : Time_and_Date/sources/Date.cpp.obj
+
+Time_and_Date/sources/Date.i: Time_and_Date/sources/Date.cpp.i
+
+.PHONY : Time_and_Date/sources/Date.i
+
+# target to preprocess a source file
+Time_and_Date/sources/Date.cpp.i:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.i
+.PHONY : Time_and_Date/sources/Date.cpp.i
+
+Time_and_Date/sources/Date.s: Time_and_Date/sources/Date.cpp.s
+
+.PHONY : Time_and_Date/sources/Date.s
+
+# target to generate assembly for a file
+Time_and_Date/sources/Date.cpp.s:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.s
+.PHONY : Time_and_Date/sources/Date.cpp.s
+
+Time_and_Date/sources/Times.obj: Time_and_Date/sources/Times.cpp.obj
+
+.PHONY : Time_and_Date/sources/Times.obj
+
+# target to build an object file
+Time_and_Date/sources/Times.cpp.obj:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.obj
+.PHONY : Time_and_Date/sources/Times.cpp.obj
+
+Time_and_Date/sources/Times.i: Time_and_Date/sources/Times.cpp.i
+
+.PHONY : Time_and_Date/sources/Times.i
+
+# target to preprocess a source file
+Time_and_Date/sources/Times.cpp.i:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.i
+.PHONY : Time_and_Date/sources/Times.cpp.i
+
+Time_and_Date/sources/Times.s: Time_and_Date/sources/Times.cpp.s
+
+.PHONY : Time_and_Date/sources/Times.s
+
+# target to generate assembly for a file
+Time_and_Date/sources/Times.cpp.s:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.s
+.PHONY : Time_and_Date/sources/Times.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -239,15 +320,24 @@ help:
 	@echo ... first_lab
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... List.obj
-	@echo ... List.i
-	@echo ... List.s
-	@echo ... Test.obj
-	@echo ... Test.i
-	@echo ... Test.s
-	@echo ... Time.obj
-	@echo ... Time.i
-	@echo ... Time.s
+	@echo ... Lists/sources/Array.obj
+	@echo ... Lists/sources/Array.i
+	@echo ... Lists/sources/Array.s
+	@echo ... Lists/sources/List.obj
+	@echo ... Lists/sources/List.i
+	@echo ... Lists/sources/List.s
+	@echo ... Lists/sources/Vector.obj
+	@echo ... Lists/sources/Vector.i
+	@echo ... Lists/sources/Vector.s
+	@echo ... Tests/Test.obj
+	@echo ... Tests/Test.i
+	@echo ... Tests/Test.s
+	@echo ... Time_and_Date/sources/Date.obj
+	@echo ... Time_and_Date/sources/Date.i
+	@echo ... Time_and_Date/sources/Date.s
+	@echo ... Time_and_Date/sources/Times.obj
+	@echo ... Time_and_Date/sources/Times.i
+	@echo ... Time_and_Date/sources/Times.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

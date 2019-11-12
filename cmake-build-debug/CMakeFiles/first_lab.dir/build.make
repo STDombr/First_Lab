@@ -57,6 +57,7 @@ include CMakeFiles/first_lab.dir/progress.make
 include CMakeFiles/first_lab.dir/flags.make
 
 CMakeFiles/first_lab.dir/main.cpp.obj: CMakeFiles/first_lab.dir/flags.make
+CMakeFiles/first_lab.dir/main.cpp.obj: CMakeFiles/first_lab.dir/includes_CXX.rsp
 CMakeFiles/first_lab.dir/main.cpp.obj: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\first_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/first_lab.dir/main.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\first_lab.dir\main.cpp.obj -c C:\Users\User\Documents\GitHub\first_lab\main.cpp
@@ -69,64 +70,115 @@ CMakeFiles/first_lab.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/first_lab.dir/main.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\first_lab\main.cpp -o CMakeFiles\first_lab.dir\main.cpp.s
 
-CMakeFiles/first_lab.dir/List.cpp.obj: CMakeFiles/first_lab.dir/flags.make
-CMakeFiles/first_lab.dir/List.cpp.obj: ../List.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\first_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/first_lab.dir/List.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\first_lab.dir\List.cpp.obj -c C:\Users\User\Documents\GitHub\first_lab\List.cpp
+CMakeFiles/first_lab.dir/Lists/sources/List.cpp.obj: CMakeFiles/first_lab.dir/flags.make
+CMakeFiles/first_lab.dir/Lists/sources/List.cpp.obj: CMakeFiles/first_lab.dir/includes_CXX.rsp
+CMakeFiles/first_lab.dir/Lists/sources/List.cpp.obj: ../Lists/sources/List.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\first_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/first_lab.dir/Lists/sources/List.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\first_lab.dir\Lists\sources\List.cpp.obj -c C:\Users\User\Documents\GitHub\first_lab\Lists\sources\List.cpp
 
-CMakeFiles/first_lab.dir/List.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/first_lab.dir/List.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\first_lab\List.cpp > CMakeFiles\first_lab.dir\List.cpp.i
+CMakeFiles/first_lab.dir/Lists/sources/List.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/first_lab.dir/Lists/sources/List.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\first_lab\Lists\sources\List.cpp > CMakeFiles\first_lab.dir\Lists\sources\List.cpp.i
 
-CMakeFiles/first_lab.dir/List.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/first_lab.dir/List.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\first_lab\List.cpp -o CMakeFiles\first_lab.dir\List.cpp.s
+CMakeFiles/first_lab.dir/Lists/sources/List.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/first_lab.dir/Lists/sources/List.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\first_lab\Lists\sources\List.cpp -o CMakeFiles\first_lab.dir\Lists\sources\List.cpp.s
 
-CMakeFiles/first_lab.dir/Time.cpp.obj: CMakeFiles/first_lab.dir/flags.make
-CMakeFiles/first_lab.dir/Time.cpp.obj: ../Time.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\first_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/first_lab.dir/Time.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\first_lab.dir\Time.cpp.obj -c C:\Users\User\Documents\GitHub\first_lab\Time.cpp
+CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.obj: CMakeFiles/first_lab.dir/flags.make
+CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.obj: CMakeFiles/first_lab.dir/includes_CXX.rsp
+CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.obj: ../Time_and_Date/sources/Times.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\first_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\first_lab.dir\Time_and_Date\sources\Times.cpp.obj -c C:\Users\User\Documents\GitHub\first_lab\Time_and_Date\sources\Times.cpp
 
-CMakeFiles/first_lab.dir/Time.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/first_lab.dir/Time.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\first_lab\Time.cpp > CMakeFiles\first_lab.dir\Time.cpp.i
+CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\first_lab\Time_and_Date\sources\Times.cpp > CMakeFiles\first_lab.dir\Time_and_Date\sources\Times.cpp.i
 
-CMakeFiles/first_lab.dir/Time.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/first_lab.dir/Time.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\first_lab\Time.cpp -o CMakeFiles\first_lab.dir\Time.cpp.s
+CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\first_lab\Time_and_Date\sources\Times.cpp -o CMakeFiles\first_lab.dir\Time_and_Date\sources\Times.cpp.s
 
-CMakeFiles/first_lab.dir/Test.cpp.obj: CMakeFiles/first_lab.dir/flags.make
-CMakeFiles/first_lab.dir/Test.cpp.obj: ../Test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\first_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/first_lab.dir/Test.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\first_lab.dir\Test.cpp.obj -c C:\Users\User\Documents\GitHub\first_lab\Test.cpp
+CMakeFiles/first_lab.dir/Tests/Test.cpp.obj: CMakeFiles/first_lab.dir/flags.make
+CMakeFiles/first_lab.dir/Tests/Test.cpp.obj: CMakeFiles/first_lab.dir/includes_CXX.rsp
+CMakeFiles/first_lab.dir/Tests/Test.cpp.obj: ../Tests/Test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\first_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/first_lab.dir/Tests/Test.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\first_lab.dir\Tests\Test.cpp.obj -c C:\Users\User\Documents\GitHub\first_lab\Tests\Test.cpp
 
-CMakeFiles/first_lab.dir/Test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/first_lab.dir/Test.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\first_lab\Test.cpp > CMakeFiles\first_lab.dir\Test.cpp.i
+CMakeFiles/first_lab.dir/Tests/Test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/first_lab.dir/Tests/Test.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\first_lab\Tests\Test.cpp > CMakeFiles\first_lab.dir\Tests\Test.cpp.i
 
-CMakeFiles/first_lab.dir/Test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/first_lab.dir/Test.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\first_lab\Test.cpp -o CMakeFiles\first_lab.dir\Test.cpp.s
+CMakeFiles/first_lab.dir/Tests/Test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/first_lab.dir/Tests/Test.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\first_lab\Tests\Test.cpp -o CMakeFiles\first_lab.dir\Tests\Test.cpp.s
+
+CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.obj: CMakeFiles/first_lab.dir/flags.make
+CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.obj: CMakeFiles/first_lab.dir/includes_CXX.rsp
+CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.obj: ../Time_and_Date/sources/Date.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\first_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\first_lab.dir\Time_and_Date\sources\Date.cpp.obj -c C:\Users\User\Documents\GitHub\first_lab\Time_and_Date\sources\Date.cpp
+
+CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\first_lab\Time_and_Date\sources\Date.cpp > CMakeFiles\first_lab.dir\Time_and_Date\sources\Date.cpp.i
+
+CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\first_lab\Time_and_Date\sources\Date.cpp -o CMakeFiles\first_lab.dir\Time_and_Date\sources\Date.cpp.s
+
+CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.obj: CMakeFiles/first_lab.dir/flags.make
+CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.obj: CMakeFiles/first_lab.dir/includes_CXX.rsp
+CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.obj: ../Lists/sources/Array.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\first_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\first_lab.dir\Lists\sources\Array.cpp.obj -c C:\Users\User\Documents\GitHub\first_lab\Lists\sources\Array.cpp
+
+CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\first_lab\Lists\sources\Array.cpp > CMakeFiles\first_lab.dir\Lists\sources\Array.cpp.i
+
+CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\first_lab\Lists\sources\Array.cpp -o CMakeFiles\first_lab.dir\Lists\sources\Array.cpp.s
+
+CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.obj: CMakeFiles/first_lab.dir/flags.make
+CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.obj: CMakeFiles/first_lab.dir/includes_CXX.rsp
+CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.obj: ../Lists/sources/Vector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\first_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\first_lab.dir\Lists\sources\Vector.cpp.obj -c C:\Users\User\Documents\GitHub\first_lab\Lists\sources\Vector.cpp
+
+CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\first_lab\Lists\sources\Vector.cpp > CMakeFiles\first_lab.dir\Lists\sources\Vector.cpp.i
+
+CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\first_lab\Lists\sources\Vector.cpp -o CMakeFiles\first_lab.dir\Lists\sources\Vector.cpp.s
 
 # Object files for target first_lab
 first_lab_OBJECTS = \
 "CMakeFiles/first_lab.dir/main.cpp.obj" \
-"CMakeFiles/first_lab.dir/List.cpp.obj" \
-"CMakeFiles/first_lab.dir/Time.cpp.obj" \
-"CMakeFiles/first_lab.dir/Test.cpp.obj"
+"CMakeFiles/first_lab.dir/Lists/sources/List.cpp.obj" \
+"CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.obj" \
+"CMakeFiles/first_lab.dir/Tests/Test.cpp.obj" \
+"CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.obj" \
+"CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.obj" \
+"CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.obj"
 
 # External object files for target first_lab
 first_lab_EXTERNAL_OBJECTS =
 
 first_lab.exe: CMakeFiles/first_lab.dir/main.cpp.obj
-first_lab.exe: CMakeFiles/first_lab.dir/List.cpp.obj
-first_lab.exe: CMakeFiles/first_lab.dir/Time.cpp.obj
-first_lab.exe: CMakeFiles/first_lab.dir/Test.cpp.obj
+first_lab.exe: CMakeFiles/first_lab.dir/Lists/sources/List.cpp.obj
+first_lab.exe: CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.obj
+first_lab.exe: CMakeFiles/first_lab.dir/Tests/Test.cpp.obj
+first_lab.exe: CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.obj
+first_lab.exe: CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.obj
+first_lab.exe: CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.obj
 first_lab.exe: CMakeFiles/first_lab.dir/build.make
 first_lab.exe: CMakeFiles/first_lab.dir/linklibs.rsp
 first_lab.exe: CMakeFiles/first_lab.dir/objects1.rsp
 first_lab.exe: CMakeFiles/first_lab.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\User\Documents\GitHub\first_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable first_lab.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\User\Documents\GitHub\first_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable first_lab.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\first_lab.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
