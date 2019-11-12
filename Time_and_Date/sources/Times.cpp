@@ -14,7 +14,7 @@ Time::Time()
     TM t;
     t.second=0;
     t.minute=0;
-    t.hour=3;
+    t.hour=2;
     plus_to_time(t);
 }
 
@@ -69,6 +69,36 @@ void Time::minus_to_time(TM t)
         tmm.hour--;
     }
     tmm.hour=(tmm.hour+24)%24;
+}
+
+void Time::yet_time()
+{
+    SYSTEMTIME st;
+    GetSystemTime(&st);
+    tmm.hour=st.wHour;
+    tmm.minute=st.wMinute;
+    tmm.second=st.wSecond;
+    TM t;
+    t.second=0;
+    t.minute=0;
+    t.hour=2;
+    plus_to_time(t);
+}
+
+int Time::Enter_element()
+{
+    std::cout<<"hour minute second: "<<std::endl;
+    int i1,i2,i3;
+    std::cin>>i1>>i2>>i3;
+    if (i1>=0 && i1<24 &&
+        i2>=0 && i2<60 &&
+        i3>=0 && i3<60)
+    {
+        add(i1,i2,i3);
+        return 1;
+    }
+    return 0;
+
 }
 
 //функція для виведення часу

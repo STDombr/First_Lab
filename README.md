@@ -7,7 +7,7 @@ Stanislav Dombrovskyi
 
 1
 
-Class "List" based on linked lists or arrays with sorting algorithms(insertion sort,quicksort,merge sort).
+Class "List" based on linked lists, arrays or vectors with sorting algorithms(insertion sort,quicksort,merge sort).
 
 -Another sorting algorithms:
 Heapsort, selection sort.

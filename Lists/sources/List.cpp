@@ -51,7 +51,6 @@ template <typename T>
 void List<T>::print()
 {
     Node<T>* node = head;
-    std::cout<<std::endl;
     for(int i=0;i<size;i++)
     {
         std::cout << node->data << " ";
@@ -65,7 +64,6 @@ template <>
 inline void List<Time>::print()
 {
     Node<Time>* node = head;
-    std::cout<<std::endl;
     for(int i=0;i<size;i++)
     {
         node->data.print();
@@ -79,7 +77,6 @@ template <>
 inline void List<Date>::print()
 {
     Node<Date>* node = head;
-    std::cout<<std::endl;
     for(int i=0;i<size;i++)
     {
         node->data.print();
@@ -107,6 +104,36 @@ void List<T>::popTail()
     delete temp;
     tail->next=NULL;
     size--;
+}
+
+template <typename T>
+void List<T>::Enter_element()
+{
+    T i;
+    std::cin>>i;
+    add(i);
+}
+template <>
+inline void List<Time>::Enter_element()
+{
+    Time i1,i2;
+    int i;
+    i=i1.Enter_element();
+    if (i==1)
+        add(i1);
+    else
+        std::cout<<"Invalid element!"<<std::endl;
+}
+template <>
+inline void List<Date>::Enter_element()
+{
+    int i;
+    Date i1,i2;
+    i=i1.Enter_element();
+    if (i==1)
+        add(i1);
+    else
+        std::cout<<"Invalid element!"<<std::endl;
 }
 
 //функція для видалення листа head

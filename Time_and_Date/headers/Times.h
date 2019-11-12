@@ -26,6 +26,8 @@ public:
     void minus_to_time(TM);
     //функція для виведення часу
     void print();
+    void yet_time();
+    int Enter_element();
     void set_hour(int);
     void set_minute(int);
     void set_second(int);

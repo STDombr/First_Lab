@@ -23,8 +23,10 @@ CMakeFiles/first_lab.dir/Tests/Test.cpp.obj
  ../Lists/headers/Array.h
  ../Lists/headers/Interface.h
  ../Lists/headers/List.h
+ ../Lists/headers/Vector.h
  ../Lists/sources/Array.cpp
  ../Lists/sources/List.cpp
+ ../Lists/sources/Vector.cpp
  ../Time_and_Date/headers/Date.h
  ../Time_and_Date/headers/Times.h
  C:/Users/User/Documents/GitHub/first_lab/Tests/Test.cpp
@@ -38,8 +40,10 @@ CMakeFiles/first_lab.dir/main.cpp.obj
  ../Lists/headers/Array.h
  ../Lists/headers/Interface.h
  ../Lists/headers/List.h
+ ../Lists/headers/Vector.h
  ../Lists/sources/Array.cpp
  ../Lists/sources/List.cpp
+ ../Lists/sources/Vector.cpp
  ../Tests/Test.cpp
  ../Time_and_Date/headers/Date.h
  ../Time_and_Date/headers/Times.h

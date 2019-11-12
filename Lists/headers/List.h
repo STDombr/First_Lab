@@ -22,6 +22,7 @@ public:
     void popTail();
     //функція для видалення листа head
     void popHead();
+    void Enter_element();
     //функція для повернення елемента з і індексом
     T element(int);
     //функція для повернення листа з і інлексом

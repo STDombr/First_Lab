@@ -19,6 +19,8 @@ public:
     void add(int,int,int);
     //функція для виведення дати
     void print();
+    int Enter_element();
+    void yet_date();
     void set_year(int);
     void set_month(int);
     void set_day(int);

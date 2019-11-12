@@ -18,8 +18,9 @@ public:
     void virtual remove()=0;
     void virtual add(T)=0;
     void virtual print()=0;
-    //void virtual popTail()=0;
-    //void virtual popHead()=0;
+    void virtual popTail()=0;
+    void virtual popHead()=0;
+    void virtual Enter_element()=0;
     //T virtual element(int)=0;
     void virtual quicksort(int=1,int=-2)=0;
     void virtual insertionsort()=0;

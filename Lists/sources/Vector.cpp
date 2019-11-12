@@ -29,17 +29,45 @@ void Vector<T>::add(T data)
 template <typename T>
 void Vector<T>::print()
 {
-    std::cout<<std::endl;
     for(int i=0;i<arr.size();i++)
         std::cout<<arr[i]<<" ";
     std::cout<<std::endl;
+}
+
+template <typename T>
+void Vector<T>::Enter_element()
+{
+    T i;
+    std::cin>>i;
+    add(i);
+}
+template <>
+inline void Vector<Time>::Enter_element()
+{
+    Time i1,i2;
+    int i;
+    i=i1.Enter_element();
+    if (i==1)
+        add(i1);
+    else
+        std::cout<<"Invalid element!"<<std::endl;
+}
+template <>
+inline void Vector<Date>::Enter_element()
+{
+    int i;
+    Date i1,i2;
+    i=i1.Enter_element();
+    if (i==1)
+        add(i1);
+    else
+        std::cout<<"Invalid element!"<<std::endl;
 }
 
 //функція для виведення всього класу для типу Time
 template <>
 inline void Vector<Time>::print()
 {
-    std::cout<<std::endl;
     for(int i=0;i<arr.size();i++)
         arr[i].print();
     std::cout<<std::endl;
@@ -49,7 +77,6 @@ inline void Vector<Time>::print()
 template <>
 inline void Vector<Date>::print()
 {
-    std::cout<<std::endl;
     for(int i=0;i<arr.size();i++)
         arr[i].print();
     std::cout<<std::endl;
@@ -59,16 +86,16 @@ inline void Vector<Date>::print()
 template <typename T>
 void Vector<T>::popTail()
 {
-    for(int i=1;i<arr.size();i++)
-        arr[0]=arr[1];
-    popHead();
+    arr.pop_back();
 }
 
 //функція для видалення елемента head
 template <typename T>
 void Vector<T>::popHead()
 {
-    arr.pop_back();
+    for(int i=1;i<arr.size();i++)
+        arr[0]=arr[1];
+    popHead();
 }
 
 

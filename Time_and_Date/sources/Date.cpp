@@ -56,6 +56,36 @@ void Date::print()
     std::cout<<dt.year<<" ";
 }
 
+void Date::yet_date()
+{
+    SYSTEMTIME st;
+    GetSystemTime(&st);
+    dt.year=st.wYear;
+    dt.month=st.wMonth;
+    dt.day=st.wDay;
+}
+
+int Date::Enter_element()
+{
+    std::cout<<"day month year: "<<std::endl;
+    int i1,i2,i3;
+    std::cin>>i1>>i2>>i3;
+    int days[]={31,28,31,30,31,30,31,31,30,31,30,31};
+    if (i2<=12 && i2>0 &&
+        i3>=0)
+    {
+        int number_of_days=days[i2-1];
+        if (i2==2 && (i3%4==0 && i3%100!=0 || i3%400==0))
+            number_of_days++;
+        if (i1>0 && i1<=number_of_days)
+        {
+            add(i1,i2,i3);
+            return 1;
+        }
+    }
+    return 0;
+}
+
 void Date::set_day(int a)
 {
     dt.day=a;

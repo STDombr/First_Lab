@@ -23,6 +23,7 @@ public:
     void popTail();
     //функція для видалення елемента head
     void popHead();
+    void Enter_element();
     //функція для повернення елемента з і індексом
     T element(int);
     //алгоритм сортування quicksort
