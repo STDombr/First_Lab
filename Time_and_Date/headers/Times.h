@@ -6,6 +6,7 @@
  *      2)Adding period of time
  *      3)Minussing period of time
  *      4)Definition of Difference of time
+ *
  * Purpose: contains declarations of methods of the class Time.
  *
  *@author Stanislav Dombrovskyi

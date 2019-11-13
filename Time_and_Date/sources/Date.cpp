@@ -4,7 +4,8 @@
  * Task: make a class that realise such tasks:
  *      1)gives the information about the date.
  *      2)determines the day of the week by date
- *      3)determines the week number for the date
+ +* task
+ *      determines the week number for the date
  * Purpose: contains declarations of methods of the class Date.
  *
  *@author Stanislav Dombrovskyi
