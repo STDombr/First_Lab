@@ -1,31 +1,52 @@
+/**
+ * 2nd Course K-28
+ * Lab 1. Variant 2-9
+ * Task: make a structure of Vectors and realise different sort algorithms
+ *
+ *Purpose: this file contains all the methods that are written in the Vector.h
+ *
+ *@author Stanislav Dombrovskyi
+ *@version 13/11/19
+ */
+
 #include <iostream>
 #include <math.h>
 #include "Times.h"
 #include "Date.h"
 #include "Vector.h"
 
-//Конструктор для класу Array
+/**
+     * The default constructor
+     */
 template <typename T>
 Vector<T>::Vector()
 {
     arr.clear();
 }
 
-//функція для видалення класу
+/**
+     * delete all elements
+     */
 template <typename T>
 void Vector<T>::remove()
 {
     arr.clear();
 }
 
-//функція для добавляння одного листа
+/**
+     * Adds the input value to the list
+     *
+     * @param data The value that would be added to the List
+     */
 template <typename T>
 void Vector<T>::add(T data)
 {
     arr.push_back(data);
 }
 
-//функція для виведення всього класу
+/**
+     * Function that prints all the data from the list on the screen
+     */
 template <typename T>
 void Vector<T>::print()
 {
@@ -33,7 +54,10 @@ void Vector<T>::print()
         std::cout<<arr[i]<<" ";
     std::cout<<std::endl;
 }
-
+/**
+     * Function that adds entered the element to the List
+     *
+     */
 template <typename T>
 void Vector<T>::Enter_element()
 {
@@ -41,6 +65,10 @@ void Vector<T>::Enter_element()
     std::cin>>i;
     add(i);
 }
+/**
+     * Function that adds entered the element to the List of type class Time
+     *
+     */
 template <>
 inline void Vector<Time>::Enter_element()
 {
@@ -52,6 +80,10 @@ inline void Vector<Time>::Enter_element()
     else
         std::cout<<"Invalid element!"<<std::endl;
 }
+/**
+     * Function that adds entered the element to the List of type class Date
+     *
+     */
 template <>
 inline void Vector<Date>::Enter_element()
 {
@@ -64,7 +96,9 @@ inline void Vector<Date>::Enter_element()
         std::cout<<"Invalid element!"<<std::endl;
 }
 
-//функція для виведення всього класу для типу Time
+/**
+     * Function that prints all the data from the list on the screen of type class Time
+     */
 template <>
 inline void Vector<Time>::print()
 {
@@ -73,7 +107,9 @@ inline void Vector<Time>::print()
     std::cout<<std::endl;
 }
 
-//функція для виведення всього класу для типу Date
+/**
+     * Function that prints all the data from the list on the screen of type class Date
+     */
 template <>
 inline void Vector<Date>::print()
 {
@@ -81,15 +117,18 @@ inline void Vector<Date>::print()
         arr[i].print();
     std::cout<<std::endl;
 }
-
-//функція для видалення елемента tail
+/**
+     * Deletes the last element of the list
+     */
 template <typename T>
 void Vector<T>::popTail()
 {
     arr.pop_back();
 }
 
-//функція для видалення елемента head
+/**
+     * Deletes the first element of the list
+     */
 template <typename T>
 void Vector<T>::popHead()
 {
@@ -98,7 +137,12 @@ void Vector<T>::popHead()
     popHead();
 }
 
-
+/**
+     * Function thad return elements from position
+     *
+     * @param position
+     * @return elements
+     */
 template <typename T>
 T Vector<T>::element(int position)
 {
@@ -106,8 +150,12 @@ T Vector<T>::element(int position)
         return arr[position-1];
     return 0;
 }
-
-//алгоритм сортування quicksort
+/**
+    * Function that performs the quicksort algorithm
+     *
+     *@param a The start sorting
+     *@param b The end sorting
+    */
 template <typename T>
 void Vector<T>::quicksort(int a,int b)
 {
@@ -136,8 +184,9 @@ void Vector<T>::quicksort(int a,int b)
     if (b>left)
         quicksort(left,b);
 }
-
-//алгоритм сортування insertionsort
+/**
+     * Function that performs the insertion sort algorithm
+     */
 template <typename T>
 void Vector<T>::insertionsort()
 {
@@ -156,7 +205,13 @@ void Vector<T>::insertionsort()
     }
 }
 
-//алгоритм сортування mergesort
+/**
+     *The function that divides the array in two subarrays and then merges them into one in ascending order
+     *
+     * @param left The start of the first array
+     * @param m The end of the first array and the start of the second array
+     * @param right The end of the second array
+     */
 template <typename T>
 void Vector<T>::merge(int left,int m,int right)
 {
@@ -198,7 +253,13 @@ void Vector<T>::merge(int left,int m,int right)
     L.remove();
     R.remove();
 }
-
+/**
+    * Function that basically calls the merge function
+    *
+     * @param left The start sorting
+     * @param right The end sorting
+     *
+     */
 template <typename T>
 void Vector<T>::mergesort(int left,int right)
 {
@@ -213,7 +274,14 @@ void Vector<T>::mergesort(int left,int right)
     }
 }
 
-//алгоритм сортування heapsort
+/**
+     +* task
+     *
+     * Function that performs the heapsort algorithm
+     *
+     * @param n count of elements
+     * @param i position of largest element
+     */
 template <typename T>
 void Vector<T>::heap(int n,int i)
 {
@@ -233,7 +301,11 @@ void Vector<T>::heap(int n,int i)
         heap(n,largest);
     }
 }
-
+/**
+     +* task
+     *
+     *Function that basically calls the heap function
+     */
 template <typename T>
 void Vector<T>::heapsort()
 {
@@ -249,7 +321,11 @@ void Vector<T>::heapsort()
     }
 }
 
-//алгоритм сортування selectionsort
+/**
+     +* task
+     *
+    * Function that performs the selection sort algorithm
+    */
 template <typename T>
 void Vector<T>::selectionsort()
 {
@@ -267,7 +343,9 @@ void Vector<T>::selectionsort()
     }
 }
 
-//функція для рандомного заповнення елементів
+/**
+     * Function that randomly generates the List of int
+     */
 template <typename T>
 void Vector<T>::random()
 {
@@ -276,7 +354,9 @@ void Vector<T>::random()
         add(rand());
 }
 
-//функція для рандомного заповнення елементів для типу double
+/**
+     * Function that randomly generates the List of double
+     */
 template <>
 inline void Vector<double>::random()
 {
@@ -285,7 +365,9 @@ inline void Vector<double>::random()
         add(1.1*rand());
 }
 
-//функція для рандомного заповнення елементів для типу string
+/**
+     * Function that randomly generates the List of string
+     */
 template <>
 inline void Vector<std::string>::random()
 {
@@ -299,8 +381,9 @@ inline void Vector<std::string>::random()
         add(s);
     }
 }
-
-//функція для рандомного заповнення елементів для типу Time
+/**
+     * Function that randomly generates the List of class Time
+     */
 template <>
 inline void Vector<Time>::random()
 {
@@ -312,8 +395,9 @@ inline void Vector<Time>::random()
         add(t);
     }
 }
-
-//функція для рандомного заповнення елементів для типу Date
+/**
+     * Function that randomly generates the List of class Date
+     */
 template <>
 inline void Vector<Date>::random()
 {

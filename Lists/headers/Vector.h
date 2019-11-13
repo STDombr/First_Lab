@@ -1,43 +1,116 @@
+/**
+ * 2nd Course K-28
+ * Lab 1. Variant 2-9
+ * Task: make a List that are based on the vector and realise different sort algorithms
+ *
+ *
+ *@author Stanislav Dombrovskyi
+ *@version 13/11/19
+ */
+
 #ifndef FIRST_LAB_VECTOR_H
 #define FIRST_LAB_VECTOR_H
 #include "Interface.h"
 #include "vector"
 
-//Клас, на основі масиву, організовані алгоритми сортування
+/**
+ * Template interface structure for the List structure that is based on the vector
+ */
 template <typename T>
 class Vector : public Interface<T>
 {
 private:
     std::vector<T> arr;
 public:
-    //конструктор для класу Array
+    /**
+     * The default constructor
+     */
     Vector();
-    //функція для видалення всієї інформації
+    /**
+     * delete all elements
+     */
     void remove();
-    //функція для добавляння одного елемента
-    void add(T);
-    //функція для виведення всього класу
+    /**
+     * Adds the input value to the list
+     *
+     * @param data The value that would be added to the List
+     */
+    void add(T data);
+    /**
+     * Function that prints all the data from the list on the screen
+     */
     void print();
-    //функція для видалення елемента tail
+    /**
+     * Deletes the last element of the list
+     */
     void popTail();
-    //функція для видалення елемента head
+    /**
+     * Deletes the first element of the list
+     */
     void popHead();
+    /**
+     * Function that adds entered the element to the List
+     *
+     */
     void Enter_element();
-    //функція для повернення елемента з і індексом
-    T element(int);
-    //алгоритм сортування quicksort
-    void quicksort(int=1,int=-2);
-    //алгоритм сортування insertionsort
+    /**
+     * Function thad return elements from position
+     *
+     * @param position
+     * @return elements
+     */
+    T element(int position);
+    /**
+    * Function that performs the quicksort algorithm
+     *
+     *@param a The start sorting
+     *@param b The end sorting
+    */
+    void quicksort(int a=1,int b=-2);
+    /**
+     * Function that performs the insertion sort algorithm
+     */
     void insertionsort();
-    //алгоритм сортування mergesort
-    void merge(int, int, int);
-    void mergesort(int=1,int=-2);
-    //алгоритм сортування heapsort
-    void heap(int,int);
+    /**
+     *The function that divides the array in two subarrays and then merges them into one in ascending order
+     *
+     * @param left The start of the first array
+     * @param m The end of the first array and the start of the second array
+     * @param right The end of the second array
+     */
+    void merge(int left,int m,int right);
+    /**
+    * Function that basically calls the merge function
+    *
+     * @param left The start sorting
+     * @param right The end sorting
+     *
+     */
+    void mergesort(int left=1,int right=-2);
+    /**
+     +* task
+     *
+     * Function that performs the heapsort algorithm
+     *
+     * @param n count of elements
+     * @param i position of largest element
+     */
+    void heap(int n,int i);
+    /**
+     +* task
+     *
+     *Function that basically calls the heap function
+     */
     void heapsort();
-    //алгоритм сортування selectionsort
+    /**
+     +* task
+     *
+    * Function that performs the selection sort algorithm
+    */
     void selectionsort();
-    //функція для рандомного заповнення елементів
+    /**
+     * Function that randomly generates the List of spec. data
+     */
     void random();
 };
 

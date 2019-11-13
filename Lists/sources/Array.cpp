@@ -1,10 +1,23 @@
+/**
+ * 2nd Course K-28
+ * Lab 1. Variant 2-9
+ * Task: make a structure of Arrays and realise different sort algorithms
+ *
+ *Purpose: this file contains all the methods that are written in the Array.h
+ *
+ *@author Stanislav Dombrovskyi
+ *@version 13/11/19
+ */
+
 #include <iostream>
 #include <math.h>
 #include "Times.h"
 #include "Date.h"
 #include "Array.h"
 
-//Конструктор для класу Array
+/**
+     * The default constructor
+     */
 template <typename T>
 Array<T>::Array()
 {
@@ -13,7 +26,9 @@ Array<T>::Array()
     max_size=30;
 }
 
-//функція для видалення класу
+/**
+     * delete all elements
+     */
 template <typename T>
 void Array<T>::remove()
 {
@@ -22,7 +37,11 @@ void Array<T>::remove()
     max_size=30;
 }
 
-//функція для добавляння одного листа
+/**
+     * Adds the input value to the list
+     *
+     * @param data The value that would be added to the List
+     */
 template <typename T>
 void Array<T>::add(T data)
 {
@@ -39,7 +58,9 @@ void Array<T>::add(T data)
     size++;
 }
 
-//функція для виведення всього класу
+/**
+     * Function that prints all the data from the list on the screen
+     */
 template <typename T>
 void Array<T>::print()
 {
@@ -48,7 +69,9 @@ void Array<T>::print()
     std::cout<<std::endl;
 }
 
-//функція для виведення всього класу для типу Time
+/**
+     * Function that prints all the data from the list on the screen of type class Time
+     */
 template <>
 inline void Array<Time>::print()
 {
@@ -57,7 +80,9 @@ inline void Array<Time>::print()
     std::cout<<std::endl;
 }
 
-//функція для виведення всього класу для типу Date
+/**
+     * Function that prints all the data from the list on the screen of type class Date
+     */
 template <>
 inline void Array<Date>::print()
 {
@@ -66,7 +91,9 @@ inline void Array<Date>::print()
     std::cout<<std::endl;
 }
 
-//функція для видалення елемента tail
+/**
+     * Deletes the last element of the list
+     */
 template <typename T>
 void Array<T>::popTail()
 {
@@ -76,7 +103,9 @@ void Array<T>::popTail()
     }
 }
 
-//функція для видалення елемента head
+/**
+     * Deletes the first element of the list
+     */
 template <typename T>
 void Array<T>::popHead()
 {
@@ -87,7 +116,10 @@ void Array<T>::popHead()
         size--;
     }
 }
-
+/**
+     * Function that adds entered the element to the List
+     *
+     */
 template <typename T>
 void Array<T>::Enter_element()
 {
@@ -95,6 +127,10 @@ void Array<T>::Enter_element()
     std::cin>>i;
     add(i);
 }
+/**
+     * Function that adds entered the element to the List of type class Time
+     *
+     */
 template <>
 inline void Array<Time>::Enter_element()
 {
@@ -106,6 +142,10 @@ inline void Array<Time>::Enter_element()
     else
         std::cout<<"Invalid element!"<<std::endl;
 }
+/**
+     * Function that adds entered the element to the List of type class Date
+     *
+     */
 template <>
 inline void Array<Date>::Enter_element()
 {
@@ -117,7 +157,12 @@ inline void Array<Date>::Enter_element()
     else
         std::cout<<"Invalid element!"<<std::endl;
 }
-
+/**
+     * Function thad return elements from position
+     *
+     * @param position
+     * @return elements
+     */
 template <typename T>
 T Array<T>::element(int position)
 {
@@ -126,7 +171,12 @@ T Array<T>::element(int position)
     return 0;
 }
 
-//алгоритм сортування quicksort
+/**
+    * Function that performs the quicksort algorithm
+     *
+     *@param a The start sorting
+     *@param b The end sorting
+    */
 template <typename T>
 void Array<T>::quicksort(int a,int b)
 {
@@ -156,7 +206,9 @@ void Array<T>::quicksort(int a,int b)
         quicksort(left,b);
 }
 
-//алгоритм сортування insertionsort
+/**
+     * Function that performs the insertion sort algorithm
+     */
 template <typename T>
 void Array<T>::insertionsort()
 {
@@ -175,7 +227,13 @@ void Array<T>::insertionsort()
     }
 }
 
-//алгоритм сортування mergesort
+/**
+     *The function that divides the array in two subarrays and then merges them into one in ascending order
+     *
+     * @param left The start of the first array
+     * @param m The end of the first array and the start of the second array
+     * @param right The end of the second array
+     */
 template <typename T>
 void Array<T>::merge(int left,int m,int right)
 {
@@ -217,7 +275,13 @@ void Array<T>::merge(int left,int m,int right)
     L.remove();
     R.remove();
 }
-
+/**
+    * Function that basically calls the merge function
+    *
+     * @param left The start sorting
+     * @param right The end sorting
+     *
+     */
 template <typename T>
 void Array<T>::mergesort(int left,int right)
 {
@@ -232,7 +296,14 @@ void Array<T>::mergesort(int left,int right)
     }
 }
 
-//алгоритм сортування heapsort
+/**
+     +* task
+     *
+     * Function that performs the heapsort algorithm
+     *
+     * @param n count of elements
+     * @param i position of largest element
+     */
 template <typename T>
 void Array<T>::heap(int n,int i)
 {
@@ -252,7 +323,11 @@ void Array<T>::heap(int n,int i)
         heap(n,largest);
     }
 }
-
+/**
+     +* task
+     *
+     *Function that basically calls the heap function
+     */
 template <typename T>
 void Array<T>::heapsort()
 {
@@ -268,7 +343,11 @@ void Array<T>::heapsort()
     }
 }
 
-//алгоритм сортування selectionsort
+/**
+     +* task
+     *
+    * Function that performs the selection sort algorithm
+    */
 template <typename T>
 void Array<T>::selectionsort()
 {
@@ -286,7 +365,9 @@ void Array<T>::selectionsort()
     }
 }
 
-//функція для рандомного заповнення елементів
+/**
+     * Function that randomly generates the List of int
+     */
 template <typename T>
 void Array<T>::random()
 {
@@ -295,7 +376,9 @@ void Array<T>::random()
         add(rand());
 }
 
-//функція для рандомного заповнення елементів для типу double
+/**
+     * Function that randomly generates the List of double
+     */
 template <>
 inline void Array<double>::random()
 {
@@ -304,7 +387,9 @@ inline void Array<double>::random()
         add(1.1*rand());
 }
 
-//функція для рандомного заповнення елементів для типу string
+/**
+     * Function that randomly generates the List of string
+     */
 template <>
 inline void Array<std::string>::random()
 {
@@ -319,7 +404,9 @@ inline void Array<std::string>::random()
     }
 }
 
-//функція для рандомного заповнення елементів для типу Time
+/**
+     * Function that randomly generates the List of class Time
+     */
 template <>
 inline void Array<Time>::random()
 {
@@ -332,7 +419,9 @@ inline void Array<Time>::random()
     }
 }
 
-//функція для рандомного заповнення елементів для типу Date
+/**
+     * Function that randomly generates the List of class Date
+     */
 template <>
 inline void Array<Date>::random()
 {
