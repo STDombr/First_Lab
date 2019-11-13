@@ -1,6 +1,22 @@
+/**
+ * 2nd Course K-28
+ * Lab 1. Variant 2-9
+ * Task: make a class that realise such tasks:
+ *      1)gives the information about the date.
+ *      2)determines the day of the week by date
+ *      3)determines the week number for the date
+ * Purpose: contains declarations of methods of the class Date.
+ *
+ *@author Stanislav Dombrovskyi
+ *@version 13/11/19
+ */
+
 #ifndef FIRST_LAB_DATE_H
 #define FIRST_LAB_DATE_H
 
+/**
+ * Strucrure to store information of date
+ */
 struct DT
 {
     int year;
@@ -8,37 +24,110 @@ struct DT
     int day;
 };
 
-//Клас для інформації про дату
+/**
+ * Structure that contains the structure DT with some methods
+ */
 class Date{
 private:
     DT dt;
 public:
-    //Конструктор, який задає теперішню дату
+    /**
+     * Constructor to structure Date
+     */
     Date();
-    //функція для добавляння дати
-    void add(int,int,int);
-    //функція для виведення дати
+
+    /**
+    * function to data validation and add this data
+    * @param day_1 information of day
+     * @param month_1 information of month
+     * @param year_1 information of year
+     */
+    void add(int day_1,int month_1,int year_1);
+    /**
+     * function to print date in consol
+     */
     void print();
+    /**
+     * function to safe entered date
+     * @return 1 if valid date and 0 if invalid date
+     */
     int Enter_element();
+    /**
+     * function to safe yet date
+     */
     void yet_date();
-    void set_year(int);
-    void set_month(int);
-    void set_day(int);
+    /**
+     * safe information of day
+     * @param a information of day
+     */
+    void set_year(int a);
+    /**
+     * safe information of day
+     * @param a information of day
+     */
+    void set_month(int a);
+    /**
+     * safe information of day
+     * @param a information of day
+     */
+    void set_day(int a);
+    /**
+     * Returning information of year
+     * @return year
+     */
     int get_year();
+
+    /**
+     * Returning information of year
+     * @return year
+     */
     int get_month();
+    /**
+     * Returning information of year
+     * @return year
+     */
     int get_day();
-    //функція яка визначає день тижня
+    /**
+     * function to definition the weekday of date
+     */
     void weekday();
-    //функція для задання рандомної дати
+    /**
+     * Creating information of random day,month,year
+     */
     void random();
-    //функція для визначення номера тижня в році
+    /**
+     * function to definition number of week at year for the date
+     */
     void num_of_week_at_year();
 
 
-    //перегрузка операторів для класу Date
+    /**
+     * Operator == to compare two elements
+    * @param c1 first element
+    * @param c2 second element
+    * @return 1 if c1==c2 and 0 if c1!=c2
+    */
     friend bool operator== (Date,Date);
+    /**
+     * Operator == to compare two elements
+    * @param c1 first element
+    * @param c2 second element
+    * @return 1 if c1!=c2 and 0 if c1==c2
+    */
     friend bool operator!= (Date,Date);
+    /**
+     * Operator == to compare two elements
+    * @param c1 first element
+    * @param c2 second element
+    * @return 1 if c1>c2 and 0 if c1<=c2
+    */
     friend bool operator > (Date,Date);
+    /**
+     * Operator == to compare two elements
+    * @param c1 first element
+    * @param c2 second element
+    * @return 1 if c1>=c2 and 0 if c1<c2
+    */
     friend bool operator >= (Date,Date);
 };
 

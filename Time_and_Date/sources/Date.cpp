@@ -1,9 +1,24 @@
+/**
+ * 2nd Course K-28
+ * Lab 1. Variant 2-9
+ * Task: make a class that realise such tasks:
+ *      1)gives the information about the date.
+ *      2)determines the day of the week by date
+ *      3)determines the week number for the date
+ * Purpose: contains declarations of methods of the class Date.
+ *
+ *@author Stanislav Dombrovskyi
+ *@version 13/11/19
+ */
+
 #include <iostream>
 #include <windows.h>
 #include <ctime>
 #include "Date.h"
 
-//функція яка визначає день тижня
+/**
+ * function to definition the weekday of date
+ */
 void Date::weekday()
 {
     std::string s[7]={"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
@@ -12,7 +27,9 @@ void Date::weekday()
     std::cout<<s[(7000+(dt.day+code_of_year+code_of_year/4-code_of_year/100+code_of_year/400+(31*code_of_month)/12))%7]<<std::endl;
 }
 
-//Конструктор, який задає теперішню дату
+/**
+     * Constructor to structure Date
+     */
 Date::Date()
 {
     SYSTEMTIME st;
@@ -22,7 +39,12 @@ Date::Date()
     dt.day=st.wDay;
 }
 
-//функція для добавляння дати та часу
+/**
+ * function to data validation and add this data
+ * @param day_1 information of day
+ * @param month_1 information of month
+ * @param year_1 information of year
+ */
 void Date::add(int day_1, int month_1, int year_1)
 {
 
@@ -44,7 +66,9 @@ void Date::add(int day_1, int month_1, int year_1)
     std::cout<<"Invalid date!";
 }
 
-//функція для виведення дати
+/**
+ * function to print date in consol
+ */
 void Date::print()
 {
     if (dt.day/10==0)
@@ -56,6 +80,9 @@ void Date::print()
     std::cout<<dt.year<<" ";
 }
 
+/**
+ * function to safe yet date
+ */
 void Date::yet_date()
 {
     SYSTEMTIME st;
@@ -65,6 +92,10 @@ void Date::yet_date()
     dt.day=st.wDay;
 }
 
+/**
+ * function to safe entered date
+ * @return 1 if valid date and 0 if invalid date
+ */
 int Date::Enter_element()
 {
     std::cout<<"day month year: "<<std::endl;
@@ -86,37 +117,63 @@ int Date::Enter_element()
     return 0;
 }
 
+/**
+ * safe information of day
+ * @param a information of day
+ */
 void Date::set_day(int a)
 {
     dt.day=a;
 }
 
+/**
+ * safe information of day
+ * @param a information of day
+ */
 void Date::set_month(int a)
 {
     dt.month=a;
 }
 
+/**
+ * safe information of day
+ * @param a information of day
+ */
 void Date::set_year(int a)
 {
     dt.year=a;
 }
 
+/**
+ * Returning information of year
+ * @return year
+ */
 int Date::get_year()
 {
     return dt.year;
 }
 
+/**
+ * Returning information of month
+ * @return month
+ */
 int Date::get_month()
 {
     return dt.month;
 }
 
+/**
+ * Returning information of day
+ * @return day
+ */
 int Date::get_day()
 {
     return dt.day;
 }
 
-//функція для задання рандомної дати
+/**
+ * Creating information of random day,month,year
+ */
 void Date::random()
 {
     time_t currTime = time(0);
@@ -129,7 +186,9 @@ void Date::random()
     dt.day=ltm->tm_mday;
 }
 
-//функція для визначення номера тижня в році
+/**
+ * function to definition number of week at year for the date
+ */
 void Date::num_of_week_at_year()
 {
     time_t rowTime = time(0);
@@ -145,17 +204,32 @@ void Date::num_of_week_at_year()
 }
 
 
-//перегрузка операторів для класу Date
+/**
+ * Operator == to compare two elements
+ * @param c1 first element
+ * @param c2 second element
+ * @return 1 if c1==c2 and 0 if c1!=c2
+ */
 bool operator== (Date c1,Date c2)
 {
     return (c1.get_day()==c2.get_day() && c1.get_month()==c2.get_month() && c1.get_year()==c2.get_year());
 }
-
+/**
+     * Operator == to compare two elements
+    * @param c1 first element
+    * @param c2 second element
+    * @return 1 if c1!=c2 and 0 if c1==c2
+    */
 bool operator!= (Date c1,Date c2)
 {
     return (!(c1.get_day()==c2.get_day() && c1.get_month()==c2.get_month() && c1.get_year()==c2.get_year()));
 }
-
+/**
+     * Operator == to compare two elements
+    * @param c1 first element
+    * @param c2 second element
+    * @return 1 if c1>c2 and 0 if c1<=c2
+    */
 bool operator > (Date c1,Date c2)
 {
     if (c1.get_year()>c2.get_year())
@@ -166,6 +240,12 @@ bool operator > (Date c1,Date c2)
         return 1;
     return 0;
 }
+/**
+     * Operator == to compare two elements
+    * @param c1 first element
+    * @param c2 second element
+    * @return 1 if c1>=c2 and 0 if c1<c2
+    */
 bool operator >= (Date c1,Date c2)
 {
     if (c1.get_year()>c2.get_year())

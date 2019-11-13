@@ -6,7 +6,11 @@
 #include "List.cpp"
 #include "Vector.cpp"
 
-//функція для тестування insertsort
+/**
+ *  Tests insertionsort with any class
+ * @tparam T type of date
+ * @param a class which want to sort
+ */
 template <typename T>
 void test_insertionsort(Interface<T> &a)
 {
@@ -19,7 +23,11 @@ void test_insertionsort(Interface<T> &a)
     a.remove();
 }
 
-//функція для тестування quicksort
+/**
+ *  Tests quicksort with any class
+ * @tparam T type of date
+ * @param a class which want to sort
+ */
 template <typename T>
 void test_quicksort(Interface<T> &a)
 {
@@ -32,7 +40,11 @@ void test_quicksort(Interface<T> &a)
     a.remove();
 }
 
-//функція для тестування mergesort
+/**
+ *  Tests mergesort with any class
+ * @tparam T type of date
+ * @param a class which want to sort
+ */
 template <typename T>
 void test_mergesort(Interface<T> &a)
 {
@@ -45,7 +57,11 @@ void test_mergesort(Interface<T> &a)
     a.remove();
 }
 
-//функція для тестування heapsort
+/**
+ *  Tests heapsort with any class
+ * @tparam T type of date
+ * @param a class which want to sort
+ */
 template <typename T>
 void test_heapsort(Interface<T> &a)
 {
@@ -58,7 +74,11 @@ void test_heapsort(Interface<T> &a)
     a.remove();
 }
 
-//функція для тестування selectionsort
+/**
+ *  Tests selectionsort with any class
+ * @tparam T type of date
+ * @param a class which want to sort
+ */
 template <typename T>
 void test_selectionsort(Interface<T> &a)
 {
@@ -71,7 +91,11 @@ void test_selectionsort(Interface<T> &a)
     a.remove();
 }
 
-//функція для тестування класу List на основі типу даних int
+/**
+ *  Tests class with type int
+ * @tparam T type of date
+ * @param a class which want to sort
+ */
 template <typename T>
 inline void test_list_int(Interface<T> &a)
 {
@@ -84,7 +108,11 @@ inline void test_list_int(Interface<T> &a)
     std::cout<<std::endl<<std::endl;
 }
 
-//функція для тестування класу List на основі типу даних double
+/**
+ *  Tests class with type double
+ * @tparam T type of date
+ * @param a class which want to sort
+ */
 template <typename T>
 inline void test_list_double(Interface<T> &a)
 {
@@ -97,7 +125,11 @@ inline void test_list_double(Interface<T> &a)
         std::cout<<std::endl<<std::endl;
 }
 
-//функція для тестування класу List на основі типу даних string
+/**
+ *  Tests class with type string
+ * @tparam T type of date
+ * @param a class which want to sort
+ */
 template <typename T>
 inline void test_list_string(Interface<T> &a) {
     std::cout << "Lists with string" << std::endl;
@@ -110,7 +142,11 @@ inline void test_list_string(Interface<T> &a) {
 }
 
 
-//функція для тестування класу List на основі класу Time
+/**
+ *  Tests class with class Time
+ * @tparam T type of date
+ * @param a class which want to sort
+ */
 template <typename T>
 inline void test_list_class_Time(Interface<T> &a)
 {
@@ -123,7 +159,11 @@ inline void test_list_class_Time(Interface<T> &a)
     std::cout<<std::endl<<std::endl;
 }
 
-//функція для тестування класу List на основі класу Date
+/**
+ *  Tests class with class Date
+ * @tparam T type of date
+ * @param a class which want to sort
+ */
 template <typename T>
 inline void test_list_class_Date(Interface<T> &a)
 {
@@ -136,7 +176,9 @@ inline void test_list_class_Date(Interface<T> &a)
     std::cout<<std::endl<<std::endl;
 }
 
-//функція для тестування класу Time
+/**
+ *  Testing class Time with all function
+ */
 inline void test_Time()
 {
     TM d;
@@ -161,7 +203,9 @@ inline void test_Time()
     std::cout<<std::endl<<std::endl;
 }
 
-//функція для тестування класу Date
+/**
+ *  Testing class Date with all function
+ */
 inline void test_Date()
 {
     Date d1,d2;
@@ -182,6 +226,11 @@ inline void test_Date()
 
 }
 
+/**
+ *  Manual testing any List with any type of date
+ * @tparam T type of date
+ * @param a class
+ */
 template <typename T>
 void Manual_testing_List(Interface<T> *a)
 {
@@ -220,6 +269,10 @@ void Manual_testing_List(Interface<T> *a)
         Manual_testing_List(a);
 }
 
+/**
+ * Manual testing class Time with some function
+ * @param T testing class
+ */
 inline void Manual_testing_Time(Time T)
 {
     int y;
@@ -286,6 +339,10 @@ inline void Manual_testing_Time(Time T)
         Manual_testing_Time(T);
 }
 
+/**
+ * Manual testing class Date with some function
+ * @param T testing class
+ */
 inline void Manual_testing_Date(Date D)
 {
     int i,y;
@@ -326,6 +383,10 @@ inline void Manual_testing_Date(Date D)
         Manual_testing_Date(D);
 }
 
+/**
+ * This Function defines the data type and class
+ * which need to testing
+ */
 //функція для представлення в консоль основних варіантів роботи з програмою
 inline void menu()
 {
