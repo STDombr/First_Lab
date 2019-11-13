@@ -1,9 +1,25 @@
+/**
+ * 2nd Course K-28
+ * Lab 1. Variant 2-9
+ * Task: make a class that realise such tasks:
+ *      1)gives the information about the time.
+ *      2)Adding period of time
+ *      3)Minussing period of time
+ *      4)Definition of Difference of time
+ * Purpose: contains declarations of methods of the class Time.
+ *
+ *@author Stanislav Dombrovskyi
+ *@version 13/11/19
+ */
+
 #include <iostream>
 #include <windows.h>
 #include "Times.h"
 #include <ctime>
 
-//Конструктор, який задає теперішній час
+/**
+     * Constructor to structure Date
+     */
 Time::Time()
 {
     SYSTEMTIME st;
@@ -18,7 +34,12 @@ Time::Time()
     plus_to_time(t);
 }
 
-//функція для добавляння часу
+/**
+    * function to time validation and add this time
+    * @param hour_1 information of hour
+     * @param minute_1 information of minute
+     * @param second_1 information of second
+     */
 void Time::add(int hour_1, int minute_1, int second_1)
 {
     if (hour_1>=0 && hour_1<24 &&
@@ -33,7 +54,10 @@ void Time::add(int hour_1, int minute_1, int second_1)
     std::cout<<"Invalid date!";
 }
 
-//функція добавляння до часу певного моменту
+/**
+ * function to adding period of time1 to saved time
+ * @param t information of time1
+ */
 void Time::plus_to_time(TM t)
 {
     tmm.second+=t.second;
@@ -44,7 +68,9 @@ void Time::plus_to_time(TM t)
     tmm.hour%=24;
 }
 
-//функція для створення рандомного моменту часу
+/**
+     * Creating information of random hour,minute,second
+     */
 void Time::random()
 {
     tmm.hour=rand()%24;
@@ -52,7 +78,10 @@ void Time::random()
     tmm.second=rand()%60;
 }
 
-//функція відніманнявід часу певного моменту
+/**
+     * function to minussing period time1 of saved time
+     * @param t information of time1
+     */
 void Time::minus_to_time(TM t)
 {
     tmm.second-=t.second;
@@ -70,7 +99,9 @@ void Time::minus_to_time(TM t)
     }
     tmm.hour=(tmm.hour+24)%24;
 }
-
+/**
+     * function to safe yet time
+     */
 void Time::yet_time()
 {
     SYSTEMTIME st;
@@ -84,7 +115,10 @@ void Time::yet_time()
     t.hour=2;
     plus_to_time(t);
 }
-
+/**
+     * function to safe entered time
+     * @return 1 if valid time and 0 if invalid time
+     */
 int Time::Enter_element()
 {
     std::cout<<"hour minute second: "<<std::endl;
@@ -114,23 +148,37 @@ void Time::print()
         std::cout<<"0";
     std::cout<<tmm.second<<" ";
 }
-
+/**
+     * safe information of hour
+     * @param a information of hour
+     */
 void Time::set_hour(int a)
 {
     tmm.hour=a;
 }
-
+/**
+     * safe information of minute
+     * @param a information of minute
+     */
 void Time::set_minute(int a)
 {
     tmm.minute=a;
 }
-
+/**
+     * safe information of second
+     * @param a information of second
+     */
 void Time::set_second(int a)
 {
     tmm.second=a;
 }
 
-//визначення різниці між моментами часу
+/**
+ * function to definition the difference about time1 and time2
+ * @param a information of time1
+ * @param b information of time2
+ * @return difference about a and b
+ */
 TM difference(Time a,Time b)
 {
     TM t;
@@ -168,50 +216,83 @@ TM difference(Time a,Time b)
     return t;
 }
 
-//представлення різниці між моментами часу в годинах
+/**
+ * calculate count of hours in difference
+ * @param t difference
+ */
 void difference_in_hours(TM t)
 {
     std::cout<<(t.hour+(float)(t.second+t.minute*60)/3600)<<" hours"<<std::endl;
 }
 
-//представлення різниці між моментами часу в хвилинах
+/**
+ * calculate count of minutes in difference
+ * @param t difference
+ */
 void difference_in_minutes(TM t)
 {
     std::cout<<t.hour*60+t.minute+((float)t.second/60)<<" minutes"<<std::endl;
 }
 
-//представлення різниці між моментами часу в секундах
+/**
+ * calculate count of seconds in difference
+ * @param t difference
+ */
 void difference_in_seconds(TM t)
 {
     std::cout<<t.hour*3600+t.minute*60+t.second<<" seconds"<<std::endl;
 }
-
+/**
+     * Returning information of hour
+     * @return hour
+     */
 int Time::get_hour()
 {
     return tmm.hour;
 }
-
+/**
+    * Returning information of minute
+    * @return minute
+    */
 int Time::get_minute()
 {
     return tmm.minute;
 }
 
-
+/**
+    * Returning information of second
+    * @return second
+    */
 int Time::get_second()
 {
     return tmm.second;
 }
-
+/**
+     * Operator == to compare two elements
+    * @param c1 first element
+    * @param c2 second element
+    * @return 1 if c1==c2 and 0 if c1!=c2
+    */
 bool operator== (Time c1,Time c2)
 {
     return (c1.get_hour()==c2.get_hour() && c1.get_minute()==c2.get_minute() && c1.get_second()==c2.get_second());
 }
-
+/**
+     * Operator == to compare two elements
+    * @param c1 first element
+    * @param c2 second element
+    * @return 1 if c1!=c2 and 0 if c1==c2
+    */
 bool operator!= (Time c1,Time c2)
 {
     return (!(c1.get_hour()==c2.get_hour() && c1.get_minute()==c2.get_minute() && c1.get_second()==c2.get_second()));
 }
-
+/**
+     * Operator == to compare two elements
+    * @param c1 first element
+    * @param c2 second element
+    * @return 1 if c1>c2 and 0 if c1<=c2
+    */
 bool operator > (Time c1,Time c2)
 {
     if (c1.get_hour()>c2.get_hour())
@@ -222,6 +303,12 @@ bool operator > (Time c1,Time c2)
         return 1;
     return 0;
 }
+/**
+     * Operator == to compare two elements
+    * @param c1 first element
+    * @param c2 second element
+    * @return 1 if c1>=c2 and 0 if c1<c2
+    */
 bool operator >= (Time c1,Time c2)
 {
     if (c1.get_hour()>c2.get_hour())
