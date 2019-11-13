@@ -9,7 +9,7 @@ Stanislav Dombrovskyi
 
 Class "List" based on linked lists, arrays or vectors with sorting algorithms(insertion sort,quicksort,merge sort).
 
--Another sorting algorithms:
+*Task	Another sorting algorithms:
 Heapsort, selection sort.
 
 -Common mechanism has been set up to allow new algorithms to be connected.
@@ -20,7 +20,9 @@ Class "Time" to store information about time, with checking for the correct time
  calculating the difference between dates, adding and substracting this difference to time. 
 
 Class "Date" to store information about date, with checking for the correct date, 
-calculating the weekday for a given date, determining the number of the week of the year.
+calculating the weekday for a given date
+
+*Task	Determining the number of the week of the year.
 
 3
 

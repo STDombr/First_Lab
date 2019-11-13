@@ -140,6 +140,16 @@ ctime
 Date.h
 C:/Users/User/Documents/GitHub/first_lab/Time_and_Date/sources/Date.h
 
+C:/Users/User/Documents/GitHub/first_lab/Time_and_Date/sources/Times.cpp
+iostream
+-
+windows.h
+-
+Times.h
+C:/Users/User/Documents/GitHub/first_lab/Time_and_Date/sources/Times.h
+ctime
+-
+
 C:/Users/User/Documents/GitHub/first_lab/main.cpp
 iostream
 -
