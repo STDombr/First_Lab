@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include "Interface.h"
-#include "Time.h"
 #include "Array.cpp"
 #include "List.cpp"
 #include "Vector.cpp"
@@ -143,14 +142,14 @@ inline void test_list_string(Interface<T> &a) {
 
 
 /**
- *  Tests class with class Time
+ *  Tests class with class Date and Time
  * @tparam T type of date
  * @param a class which want to sort
  */
 template <typename T>
-inline void test_list_class_Time(Interface<T> &a)
+inline void test_list_class_Date_and_Time(Interface<T> &a)
 {
-    std::cout << "Lists with class Time" << std::endl;
+    std::cout << "Lists with class Date and Time" << std::endl;
     test_insertionsort(a);
     test_quicksort(a);
     test_mergesort(a);
@@ -160,36 +159,27 @@ inline void test_list_class_Time(Interface<T> &a)
 }
 
 /**
- *  Tests class with class Date
- * @tparam T type of date
- * @param a class which want to sort
+ *  Testing class Date and Time with all function
  */
-template <typename T>
-inline void test_list_class_Date(Interface<T> &a)
+inline void test_Date_and_Time()
 {
-    std::cout << "Lists with class Date" << std::endl;
-    test_insertionsort(a);
-    test_quicksort(a);
-    test_mergesort(a);
-    test_heapsort(a);
-    test_selectionsort(a);
-    std::cout<<std::endl<<std::endl;
-}
-
-/**
- *  Testing class Time with all function
- */
-inline void test_Time()
-{
-    TM d;
-    Time t1,t2;
+    DIFF d;
+    Date_and_Time t1,t2;
     std::cout<<"System time T1: ";
     t1.print();
     std::cout<<std::endl<<"Random time T2: ";
     t2.random();
     t2.print();
+
+    std::cout<<std::endl;
+    std::cout<<"Week number in the year of T1: ";
+    t1.getDate().num_of_week_at_year();
+    std::cout<<std::endl<<"Day of the week T1: ";
+    t1.getDate().weekday();
     std::cout<<std::endl<<"Difference between T1 and T2 : "<<std::endl;
     d=difference(t1,t2);
+    std::cout<<d.days<<" days "<<d.hours<<" hours "<<d.minutes<<" minutes "<<d.seconds<<" seconds "<<std::endl<<"OR"<<std::endl;
+    difference_in_days(d);
     difference_in_hours(d);
     difference_in_minutes(d);
     difference_in_seconds(d);
@@ -200,30 +190,8 @@ inline void test_Time()
     t1.plus_to_time(d);
     t1.plus_to_time(d);
     t1.print();
-    std::cout<<std::endl<<std::endl;
-}
-
-/**
- *  Testing class Date with all function
- */
-inline void test_Date()
-{
-    Date d1,d2;
-    std::cout<<std::endl<<"System date D1: ";
-    d1.print();
-    std::cout<<std::endl<<"Random date D2: ";
-    d2.random();
-    d2.print();
-    std::cout<<std::endl<<"Day of the week D1: ";
-    d1.weekday();
-    std::cout<<"Day of the week D2: ";
-    d2.weekday();
-    std::cout<<"Week number in the year of D1: ";
-    d1.num_of_week_at_year();
-    std::cout<<"Week number in the year of D2: ";
-    d2.num_of_week_at_year();
-    std::cout<<std::endl<<std::endl;
-
+    std::cout<<std::endl;
+    std::cout<<std::endl;
 }
 
 /**
@@ -270,20 +238,23 @@ void Manual_testing_List(Interface<T> *a)
 }
 
 /**
- * Manual testing class Time with some function
+ * Manual testing class Date and Time with some function
  * @param T testing class
  */
-inline void Manual_testing_Time(Time T)
+inline void Manual_testing_Date_and_Time(Date_and_Time T)
 {
     int y;
     int i;
-    TM t1,t2;
-    Time tm1,tm2;
+    DIFF t1,t2;
+    Time tm;
+    Date dt;
+    int q1,q2,q3,q4,q5,q6;
+    Date_and_Time tm1,tm2;
     std::cin>>i;
     if (i==1)
     {
         T.random();
-        std::cout<<"Random generating time."<<std::endl;
+        std::cout<<"Random generating Date and Time."<<std::endl;
     }
     if (i==2)
     {
@@ -300,31 +271,39 @@ inline void Manual_testing_Time(Time T)
     if (i==4)
     {
         std::cout<<"Yet time."<<std::endl;
-        T.yet_time();
+        T.T.yet_time();
+        T.D.yet_date();
     }
     if (i==5)
     {
-        std::cout<<"Enter hour, minute, second:"<<std::endl;
-        std::cin>>t1.hour>>t1.minute>>t1.second;
+        std::cout<<"Enter days, hours, minutes, seconds:"<<std::endl;
+        std::cin>>t1.days>>t1.hours>>t1.minutes>>t1.seconds;
         T.plus_to_time(t1);
         std::cout<<"Plussing to time."<<std::endl;
     }
     if (i==6)
     {
-        std::cout<<"Enter hour, minute, second:"<<std::endl;
-        std::cin>>t1.hour>>t1.minute>>t1.second;
+        std::cout<<"Enter days, hours, minutes, seconds:"<<std::endl;
+        std::cin>>t1.days>>t1.hours>>t1.minutes>>t1.seconds;
         T.minus_to_time(t1);
         std::cout<<"Minusing from time."<<std::endl;
     }
     if (i==7)
     {
-        std::cout<<"Enter first time:"<<std::endl;
-        std::cin>>t1.hour>>t1.minute>>t1.second;
-        tm1.add(t1.hour,t1.minute,t1.second);
-        std::cout<<"Enter second time:"<<std::endl;
-        std::cin>>t2.hour>>t2.minute>>t2.second;
-        tm2.add(t2.hour,t2.minute,t2.second);
+        std::cout<<"Enter first time(h:m:s d.m.y):"<<std::endl;
+        std::cin>>q1>>q2>>q3>>q4>>q5>>q6;
+        tm.add(q1,q2,q3);
+        dt.add(q4,q5,q6);
+        tm1.add(tm,dt);
+        std::cout<<"Enter second time(h:m:s d.m.y):"<<std::endl;
+        std::cin>>q1>>q2>>q3>>q4>>q5>>q6;
+        tm.add(q1,q2,q3);
+        dt.add(q4,q5,q6);
+        tm2.add(tm,dt);
         t1=difference(tm1,tm2);
+        std::cout<<"Difference in days: ";
+        difference_in_days(t1);
+        std::cout<<std::endl;
         std::cout<<"Difference in hours: ";
         difference_in_hours(t1);
         std::cout<<std::endl;
@@ -335,52 +314,18 @@ inline void Manual_testing_Time(Time T)
         difference_in_seconds(t1);
         std::cout<<std::endl;
     }
-    if (i!=9)
-        Manual_testing_Time(T);
-}
-
-/**
- * Manual testing class Date with some function
- * @param T testing class
- */
-inline void Manual_testing_Date(Date D)
-{
-    int i,y;
-    std::cin>>i;
-    if (i==1)
-    {
-        D.random();
-        std::cout<<"Random generating date."<<std::endl;
-    }
-    if (i==2)
-    {
-        D.print();
-        std::cout<<std::endl;
-    }
-    if (i==3)
-    {
-        std::cout<<"Enter element"<<std::endl;
-        y=D.Enter_element();
-        if(y==0)
-            std::cout<<"Invalid element!"<<std::endl;
-    }
-    if (i==4)
-    {
-        std::cout<<"Yet time."<<std::endl;
-        D.yet_date();
-    }
-    if (i==5)
+    if (i==8)
     {
         std::cout<<"Day of the week: ";
-        D.weekday();
+        T.D.weekday();
     }
-    if (i==6)
+    if (i==9)
     {
         std::cout<<"Number of week at year: ";
-        D.num_of_week_at_year();
+        T.D.num_of_week_at_year();
     }
-    if (i!=9)
-        Manual_testing_Date(D);
+    if (i!=10)
+        Manual_testing_Date_and_Time(T);
 }
 
 /**
@@ -390,14 +335,12 @@ inline void Manual_testing_Date(Date D)
 //функція для представлення в консоль основних варіантів роботи з програмою
 inline void menu()
 {
-    Time T;
-    Date D;
-    List<int> L1; List<double> L2; List<std::string> L3; List<Time> L4; List<Date> L5;
-    Array<int> A1; Array<double> A2; Array<std::string> A3; Array<Time> A4; Array<Date> A5;
-    Vector<int> V1; Vector<double> V2; Vector<std::string> V3; Vector<Time> V4; Vector<Date> V5;
+    Date_and_Time T;
+    List<int> L1; List<double> L2; List<std::string> L3; List<Date_and_Time> L4;
+    Array<int> A1; Array<double> A2; Array<std::string> A3; Array<Date_and_Time> A4;
+    Vector<int> V1; Vector<double> V2; Vector<std::string> V3; Vector<Date_and_Time> V4;
     std::cout<<"1-Testing structure of List"<<std::endl
-        <<"2-Testing class Time"<<std::endl
-        <<"3-Testing class Date"<<std::endl
+        <<"2-Testing class Date and Time"<<std::endl
         <<"9-Exit"<<std::endl;
     int i1,i2;
     std::cin>>i1;
@@ -421,8 +364,7 @@ inline void menu()
             test_list_int(L1);
             test_list_double(L2);
             test_list_string(L3);
-            test_list_class_Time(L4);
-            test_list_class_Date(L5);
+            test_list_class_Date_and_Time(L4);
         }
         else if (i1==21)
         {
@@ -430,8 +372,7 @@ inline void menu()
             test_list_int(A1);
             test_list_double(A2);
             test_list_string(A3);
-            test_list_class_Time(A4);
-            test_list_class_Date(A5);
+            test_list_class_Date_and_Time(A4);
         }
         else if (i1==31)
         {
@@ -439,8 +380,7 @@ inline void menu()
             test_list_int(V1);
             test_list_double(V2);
             test_list_string(V3);
-            test_list_class_Time(V4);
-            test_list_class_Date(V5);
+            test_list_class_Date_and_Time(V4);
         }
         else
         {
@@ -448,8 +388,7 @@ inline void menu()
                      <<"1-int"<<std::endl
                      <<"2-double"<<std::endl
                      <<"3-string"<<std::endl
-                     <<"4-class Time"<<std::endl
-                     <<"5-class Date"<<std::endl;
+                     <<"4-class Date and Time"<<std::endl;
             std::cin>>i2;
             i1=i1*10+i2;
             std::cout<<"1-Random lists"<<std::endl
@@ -467,8 +406,6 @@ inline void menu()
                 Manual_testing_List(&L3);
             else if (i1==124)
                 Manual_testing_List(&L4);
-            else if (i1==125)
-                Manual_testing_List(&L5);
             else if (i1==221)
                 Manual_testing_List(&A1);
             else if (i1==222)
@@ -477,8 +414,6 @@ inline void menu()
                 Manual_testing_List(&A3);
             else if (i1==224)
                 Manual_testing_List(&A4);
-            else if (i1==225)
-                Manual_testing_List(&A5);
             else if (i1==321)
                 Manual_testing_List(&V1);
             else if (i1==322)
@@ -487,8 +422,6 @@ inline void menu()
                 Manual_testing_List(&V3);
             else if (i1==324)
                 Manual_testing_List(&V4);
-            else if (i1==325)
-                Manual_testing_List(&V5);
         }
     }
     else if (i1==2) {
@@ -497,7 +430,7 @@ inline void menu()
                   << "2-Manual testing" << std::endl;
         std::cin >> i2;
         if (i2 == 1)
-            test_Time();
+            test_Date_and_Time();
         else if (i2 == 2)
         {
             std::cout<<"1-Random Time"<<std::endl
@@ -507,28 +440,10 @@ inline void menu()
                      <<"5-Plus to Date"<<std::endl
                      <<"6-Minus to Date"<<std::endl
                      <<"7-Difference with date"<<std::endl
-                     <<"9-Return"<<std::endl;
-            Manual_testing_Time(T);
-        }
-    }
-    else if (i1==3)
-    {
-        std::cout<<"Type of testing"<<std::endl
-                 <<"1-Automatic testing"<<std::endl
-                 <<"2-Manual testing"<<std::endl;
-        std::cin>>i2;
-        if (i2==1)
-            test_Date();
-        else if (i2==2)
-        {
-            std::cout<<"1-Random Date"<<std::endl
-                     <<"2-Print"<<std::endl
-                     <<"3-Set date"<<std::endl
-                     <<"4-Yet date"<<std::endl
-                     <<"5-Day of the week"<<std::endl
-                     <<"6-Number of week at year"<<std::endl
-                     <<"9-Return"<<std::endl;
-            Manual_testing_Date(D);
+                     <<"8-Day of the week"<<std::endl
+                     <<"9-Number of week at year"<<std::endl
+                     <<"10-Return"<<std::endl;
+            Manual_testing_Date_and_Time(T);
         }
     }
 

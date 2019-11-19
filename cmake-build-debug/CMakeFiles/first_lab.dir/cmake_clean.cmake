@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.obj"
   "CMakeFiles/first_lab.dir/Lists/sources/Array.cpp.obj"
   "CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.obj"
+  "CMakeFiles/first_lab.dir/Time_and_Date/sources/Date_and_Time.cpp.obj"
   "first_lab.pdb"
   "first_lab.exe"
   "first_lab.exe.manifest"

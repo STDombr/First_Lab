@@ -117,10 +117,16 @@
 		<Unit filename="C:/Users/User/Documents/GitHub/first_lab/Time_and_Date/headers/Date.h">
 			<Option target="first_lab"/>
 		</Unit>
+		<Unit filename="C:/Users/User/Documents/GitHub/first_lab/Time_and_Date/headers/Date_and_Time.h">
+			<Option target="first_lab"/>
+		</Unit>
 		<Unit filename="C:/Users/User/Documents/GitHub/first_lab/Time_and_Date/headers/Times.h">
 			<Option target="first_lab"/>
 		</Unit>
 		<Unit filename="C:/Users/User/Documents/GitHub/first_lab/Time_and_Date/sources/Date.cpp">
+			<Option target="first_lab"/>
+		</Unit>
+		<Unit filename="C:/Users/User/Documents/GitHub/first_lab/Time_and_Date/sources/Date_and_Time.cpp">
 			<Option target="first_lab"/>
 		</Unit>
 		<Unit filename="C:/Users/User/Documents/GitHub/first_lab/Time_and_Date/sources/Times.cpp">

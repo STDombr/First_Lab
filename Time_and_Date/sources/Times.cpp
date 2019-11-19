@@ -54,6 +54,18 @@ void Time::add(int hour_1, int minute_1, int second_1)
     std::cout<<"Invalid date!";
 }
 
+
+
+/**
+     * Creating information of random hour,minute,second
+     */
+void Time::random()
+{
+    tmm.hour=rand()%24;
+    tmm.minute=rand()%60;
+    tmm.second=rand()%60;
+}
+
 /**
  * function to adding period of time1 to saved time
  * @param t information of time1
@@ -69,37 +81,6 @@ void Time::plus_to_time(TM t)
 }
 
 /**
-     * Creating information of random hour,minute,second
-     */
-void Time::random()
-{
-    tmm.hour=rand()%24;
-    tmm.minute=rand()%60;
-    tmm.second=rand()%60;
-}
-
-/**
-     * function to minussing period time1 of saved time
-     * @param t information of time1
-     */
-void Time::minus_to_time(TM t)
-{
-    tmm.second-=t.second;
-    tmm.minute-=t.minute;
-    tmm.hour-=t.hour;
-    if (tmm.second<0)
-    {
-        tmm.second+=60;
-        tmm.minute--;
-    }
-    if (tmm.minute<0)
-    {
-        tmm.minute+=60;
-        tmm.hour--;
-    }
-    tmm.hour=(tmm.hour+24)%24;
-}
-/**
      * function to safe yet time
      */
 void Time::yet_time()
@@ -114,25 +95,6 @@ void Time::yet_time()
     t.minute=0;
     t.hour=2;
     plus_to_time(t);
-}
-/**
-     * function to safe entered time
-     * @return 1 if valid time and 0 if invalid time
-     */
-int Time::Enter_element()
-{
-    std::cout<<"hour minute second: "<<std::endl;
-    int i1,i2,i3;
-    std::cin>>i1>>i2>>i3;
-    if (i1>=0 && i1<24 &&
-        i2>=0 && i2<60 &&
-        i3>=0 && i3<60)
-    {
-        add(i1,i2,i3);
-        return 1;
-    }
-    return 0;
-
 }
 
 //функція для виведення часу
@@ -173,75 +135,6 @@ void Time::set_second(int a)
     tmm.second=a;
 }
 
-/**
- * function to definition the difference about time1 and time2
- * @param a information of time1
- * @param b information of time2
- * @return difference about a and b
- */
-TM difference(Time a,Time b)
-{
-    TM t;
-    if (a>b)
-    {
-        t.hour=a.get_hour()-b.get_hour();
-        t.minute=a.get_minute()-b.get_minute();
-        t.second=a.get_second()-b.get_second();
-        if (t.second<0)
-        {
-            t.second+=60;
-            t.minute--;
-        }
-        if (t.minute<0)
-        {
-            t.minute+=60;
-            t.hour--;
-        }
-    } else
-    {
-        t.hour=b.get_hour()-a.get_hour();
-        t.minute=b.get_minute()-a.get_minute();
-        t.second=b.get_second()-a.get_second();
-        if (t.second<0)
-        {
-            t.second+=60;
-            t.minute--;
-        }
-        if (t.minute<0)
-        {
-            t.minute+=60;
-            t.hour--;
-        }
-    }
-    return t;
-}
-
-/**
- * calculate count of hours in difference
- * @param t difference
- */
-void difference_in_hours(TM t)
-{
-    std::cout<<(t.hour+(float)(t.second+t.minute*60)/3600)<<" hours"<<std::endl;
-}
-
-/**
- * calculate count of minutes in difference
- * @param t difference
- */
-void difference_in_minutes(TM t)
-{
-    std::cout<<t.hour*60+t.minute+((float)t.second/60)<<" minutes"<<std::endl;
-}
-
-/**
- * calculate count of seconds in difference
- * @param t difference
- */
-void difference_in_seconds(TM t)
-{
-    std::cout<<t.hour*3600+t.minute*60+t.second<<" seconds"<<std::endl;
-}
 /**
      * Returning information of hour
      * @return hour

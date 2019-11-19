@@ -12,8 +12,7 @@
 #include <iostream>
 #include <math.h>
 #include "List.h"
-#include "Times.h"
-#include "Date.h"
+#include "Date_and_Time.h"
 
 /**
      * The default constructor
@@ -81,27 +80,12 @@ void List<T>::print()
 }
 
 /**
-     * Function that prints all the data from the list on the screen of type class Time
+     * Function that prints all the data from the list on the screen of type class Date_and_Time
      */
 template <>
-inline void List<Time>::print()
+inline void List<Date_and_Time>::print()
 {
-    Node<Time>* node = head;
-    for(int i=0;i<size;i++)
-    {
-        node->data.print();
-        node=node->next;
-    }
-    std::cout<<std::endl;
-}
-
-/**
-     * Function that prints all the data from the list on the screen of type class Date
-     */
-template <>
-inline void List<Date>::print()
-{
-    Node<Date>* node = head;
+    Node<Date_and_Time>* node = head;
     for(int i=0;i<size;i++)
     {
         node->data.print();
@@ -143,32 +127,18 @@ void List<T>::Enter_element()
     std::cin>>i;
     add(i);
 }
+
 /**
-     * Function that adds entered the element to the List of type class Time
+     * Function that adds entered the element to the List of type class Date_and_Time
      *
      */
 template <>
-inline void List<Time>::Enter_element()
+inline void List<Date_and_Time>::Enter_element()
 {
-    Time i1,i2;
+    Date_and_Time i1;
     int i;
     i=i1.Enter_element();
-    if (i==1)
-        add(i1);
-    else
-        std::cout<<"Invalid element!"<<std::endl;
-}
-/**
-     * Function that adds entered the element to the List of type class Date
-     *
-     */
-template <>
-inline void List<Date>::Enter_element()
-{
-    int i;
-    Date i1,i2;
-    i=i1.Enter_element();
-    if (i==1)
+    if (i==2)
         add(i1);
     else
         std::cout<<"Invalid element!"<<std::endl;
@@ -474,31 +444,17 @@ inline void List<std::string>::random()
 }
 
 /**
-     * Function that randomly generates the List of class Time
+     * Function that randomly generates the List of class Date_and_Time
      */
 template <>
-inline void List<Time>::random()
+inline void List<Date_and_Time>::random()
 {
     int r=rand()%10+5;
-    Time t;
-    for (int i=0;i<r;i++)
-    {
-        t.random();
-        add(t);
-    }
-}
-
-/**
-     * Function that randomly generates the List of class Date
-     */
-template <>
-inline void List<Date>::random()
-{
-    int r=rand()%10+5;
-    Date d;
+    Date_and_Time d;
     for (int i=0;i<r;i++)
     {
         d.random();
         add(d);
     }
 }
+

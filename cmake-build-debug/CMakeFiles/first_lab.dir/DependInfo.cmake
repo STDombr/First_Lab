@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/User/Documents/GitHub/first_lab/Lists/sources/Vector.cpp" "C:/Users/User/Documents/GitHub/first_lab/cmake-build-debug/CMakeFiles/first_lab.dir/Lists/sources/Vector.cpp.obj"
   "C:/Users/User/Documents/GitHub/first_lab/Tests/Test.cpp" "C:/Users/User/Documents/GitHub/first_lab/cmake-build-debug/CMakeFiles/first_lab.dir/Tests/Test.cpp.obj"
   "C:/Users/User/Documents/GitHub/first_lab/Time_and_Date/sources/Date.cpp" "C:/Users/User/Documents/GitHub/first_lab/cmake-build-debug/CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.obj"
+  "C:/Users/User/Documents/GitHub/first_lab/Time_and_Date/sources/Date_and_Time.cpp" "C:/Users/User/Documents/GitHub/first_lab/cmake-build-debug/CMakeFiles/first_lab.dir/Time_and_Date/sources/Date_and_Time.cpp.obj"
   "C:/Users/User/Documents/GitHub/first_lab/Time_and_Date/sources/Times.cpp" "C:/Users/User/Documents/GitHub/first_lab/cmake-build-debug/CMakeFiles/first_lab.dir/Time_and_Date/sources/Times.cpp.obj"
   "C:/Users/User/Documents/GitHub/first_lab/main.cpp" "C:/Users/User/Documents/GitHub/first_lab/cmake-build-debug/CMakeFiles/first_lab.dir/main.cpp.obj"
   )

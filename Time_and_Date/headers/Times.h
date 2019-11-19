@@ -49,16 +49,7 @@ public:
      * Creating information of random hour,minute,second
      */
     void random();
-    /**
-     * function to adding period of time1 to saved time
-     * @param t information of time1
-     */
-    void plus_to_time(TM t);
-    /**
-     * function to minussing period time1 of saved time
-     * @param t information of time1
-     */
-    void minus_to_time(TM t);
+
     /**
      * function to print date in consol
      */
@@ -67,11 +58,6 @@ public:
      * function to safe yet time
      */
     void yet_time();
-    /**
-     * function to safe entered time
-     * @return 1 if valid time and 0 if invalid time
-     */
-    int Enter_element();
     /**
      * safe information of hour
      * @param a information of hour
@@ -87,6 +73,12 @@ public:
      * @param a information of second
      */
     void set_second(int a);
+    /**
+ * function to adding period of time1 to saved time
+ * @param t information of time1
+ */
+    void plus_to_time(TM t);
+
     /**
      * Returning information of hour
      * @return hour
@@ -133,28 +125,8 @@ public:
     friend bool operator >= (Time c1,Time c2);
 };
 
-/**
- * calculate count of seconds in difference
- * @param t difference
- */
-void difference_in_seconds(TM t);
-/**
- * calculate count of minutes in difference
- * @param t difference
- */
-void difference_in_minutes(TM t);
-/**
- * calculate count of hours in difference
- * @param t difference
- */
-void difference_in_hours(TM t);
-/**
- * function to definition the difference about time1 and time2
- * @param a information of time1
- * @param b information of time2
- * @return difference about a and b
- */
-TM difference(Time a,Time b);
+
+
 
 
 #endif //FIRST_LAB_TIMES_H

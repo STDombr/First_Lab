@@ -257,6 +257,33 @@ Time_and_Date/sources/Date.cpp.s:
 	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Time_and_Date/sources/Date.cpp.s
 .PHONY : Time_and_Date/sources/Date.cpp.s
 
+Time_and_Date/sources/Date_and_Time.obj: Time_and_Date/sources/Date_and_Time.cpp.obj
+
+.PHONY : Time_and_Date/sources/Date_and_Time.obj
+
+# target to build an object file
+Time_and_Date/sources/Date_and_Time.cpp.obj:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Time_and_Date/sources/Date_and_Time.cpp.obj
+.PHONY : Time_and_Date/sources/Date_and_Time.cpp.obj
+
+Time_and_Date/sources/Date_and_Time.i: Time_and_Date/sources/Date_and_Time.cpp.i
+
+.PHONY : Time_and_Date/sources/Date_and_Time.i
+
+# target to preprocess a source file
+Time_and_Date/sources/Date_and_Time.cpp.i:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Time_and_Date/sources/Date_and_Time.cpp.i
+.PHONY : Time_and_Date/sources/Date_and_Time.cpp.i
+
+Time_and_Date/sources/Date_and_Time.s: Time_and_Date/sources/Date_and_Time.cpp.s
+
+.PHONY : Time_and_Date/sources/Date_and_Time.s
+
+# target to generate assembly for a file
+Time_and_Date/sources/Date_and_Time.cpp.s:
+	$(MAKE) -f CMakeFiles\first_lab.dir\build.make CMakeFiles/first_lab.dir/Time_and_Date/sources/Date_and_Time.cpp.s
+.PHONY : Time_and_Date/sources/Date_and_Time.cpp.s
+
 Time_and_Date/sources/Times.obj: Time_and_Date/sources/Times.cpp.obj
 
 .PHONY : Time_and_Date/sources/Times.obj
@@ -335,6 +362,9 @@ help:
 	@echo ... Time_and_Date/sources/Date.obj
 	@echo ... Time_and_Date/sources/Date.i
 	@echo ... Time_and_Date/sources/Date.s
+	@echo ... Time_and_Date/sources/Date_and_Time.obj
+	@echo ... Time_and_Date/sources/Date_and_Time.i
+	@echo ... Time_and_Date/sources/Date_and_Time.s
 	@echo ... Time_and_Date/sources/Times.obj
 	@echo ... Time_and_Date/sources/Times.i
 	@echo ... Time_and_Date/sources/Times.s

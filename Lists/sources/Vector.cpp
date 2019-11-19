@@ -11,9 +11,8 @@
 
 #include <iostream>
 #include <math.h>
-#include "Times.h"
-#include "Date.h"
 #include "Vector.h"
+#include "Date_and_Time.h"
 
 /**
      * The default constructor
@@ -66,57 +65,32 @@ void Vector<T>::Enter_element()
     add(i);
 }
 /**
-     * Function that adds entered the element to the List of type class Time
+     * Function that adds entered the element to the List of type class Date_and_Time
      *
      */
 template <>
-inline void Vector<Time>::Enter_element()
+inline void Vector<Date_and_Time>::Enter_element()
 {
-    Time i1,i2;
+    Date_and_Time i1;
     int i;
     i=i1.Enter_element();
-    if (i==1)
-        add(i1);
-    else
-        std::cout<<"Invalid element!"<<std::endl;
-}
-/**
-     * Function that adds entered the element to the List of type class Date
-     *
-     */
-template <>
-inline void Vector<Date>::Enter_element()
-{
-    int i;
-    Date i1,i2;
-    i=i1.Enter_element();
-    if (i==1)
+    if (i==2)
         add(i1);
     else
         std::cout<<"Invalid element!"<<std::endl;
 }
 
 /**
-     * Function that prints all the data from the list on the screen of type class Time
+     * Function that prints all the data from the list on the screen of type class Date_and_Time
      */
 template <>
-inline void Vector<Time>::print()
+inline void Vector<Date_and_Time>::print()
 {
     for(int i=0;i<arr.size();i++)
         arr[i].print();
     std::cout<<std::endl;
 }
 
-/**
-     * Function that prints all the data from the list on the screen of type class Date
-     */
-template <>
-inline void Vector<Date>::print()
-{
-    for(int i=0;i<arr.size();i++)
-        arr[i].print();
-    std::cout<<std::endl;
-}
 /**
      * Deletes the last element of the list
      */
@@ -382,30 +356,16 @@ inline void Vector<std::string>::random()
     }
 }
 /**
-     * Function that randomly generates the List of class Time
+     * Function that randomly generates the List of class Date_and_Time
      */
 template <>
-inline void Vector<Time>::random()
+inline void Vector<Date_and_Time>::random()
 {
     int r=rand()%10+5;
-    Time t;
+    Date_and_Time t;
     for (int i=0;i<r;i++)
     {
         t.random();
         add(t);
-    }
-}
-/**
-     * Function that randomly generates the List of class Date
-     */
-template <>
-inline void Vector<Date>::random()
-{
-    int r=rand()%10+5;
-    Date d;
-    for (int i=0;i<r;i++)
-    {
-        d.random();
-        add(d);
     }
 }

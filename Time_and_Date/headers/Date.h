@@ -49,11 +49,6 @@ public:
      */
     void print();
     /**
-     * function to safe entered date
-     * @return 1 if valid date and 0 if invalid date
-     */
-    int Enter_element();
-    /**
      * function to safe yet date
      */
     void yet_date();
