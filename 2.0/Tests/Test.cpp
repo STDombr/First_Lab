@@ -337,9 +337,7 @@ inline void menu()
 {
     Date_and_Time T;
     List<int> L1; List<double> L2; List<std::string> L3; List<Date_and_Time> L4;
-    Array<int> A1; Array<double> A2; Array<std::string> A3; Array<Date_and_Time> A4;
-    Vector<int> V1; Vector<double> V2; Vector<std::string> V3; Vector<Date_and_Time> V4;
-    std::cout<<"1-Testing structure of List"<<std::endl
+    std::cout<<"1-Testing structure of List on Linked Lists"<<std::endl
         <<"2-Testing class Date and Time"<<std::endl
         <<"9-Exit"<<std::endl;
     int i1,i2;
@@ -348,16 +346,11 @@ inline void menu()
         return;
     else if (i1==1)
     {
-        std::cout<<"Type of link"<<std::endl
-                 <<"1-Linked lists"<<std::endl
-                 <<"2-Arrays"<<std::endl
-                 <<"3-Vectors"<<std::endl;
-        std::cin>>i1;
         std::cout<<"Type of testing"<<std::endl
                  <<"1-Automatic testing"<<std::endl
                  <<"2-Manual testing"<<std::endl;
         std::cin>>i2;
-        i1=i1*10+i2;
+        i1=10+i2;
         if (i1==11)
         {
             std::cout << "Linked lists" << std::endl;
@@ -365,22 +358,6 @@ inline void menu()
             test_list_double(L2);
             test_list_string(L3);
             test_list_class_Date_and_Time(L4);
-        }
-        else if (i1==21)
-        {
-            std::cout << "Arrays" << std::endl;
-            test_list_int(A1);
-            test_list_double(A2);
-            test_list_string(A3);
-            test_list_class_Date_and_Time(A4);
-        }
-        else if (i1==31)
-        {
-            std::cout << "Vectors" << std::endl;
-            test_list_int(V1);
-            test_list_double(V2);
-            test_list_string(V3);
-            test_list_class_Date_and_Time(V4);
         }
         else
         {
@@ -390,7 +367,7 @@ inline void menu()
                      <<"3-string"<<std::endl
                      <<"4-class Date and Time"<<std::endl;
             std::cin>>i2;
-            i1=i1*10+i2;
+            i1=10+i2;
             std::cout<<"1-Random lists"<<std::endl
                      <<"2-Print"<<std::endl
                      <<"3-Add element"<<std::endl
@@ -406,22 +383,6 @@ inline void menu()
                 Manual_testing_List(&L3);
             else if (i1==124)
                 Manual_testing_List(&L4);
-            else if (i1==221)
-                Manual_testing_List(&A1);
-            else if (i1==222)
-                Manual_testing_List(&A2);
-            else if (i1==223)
-                Manual_testing_List(&A3);
-            else if (i1==224)
-                Manual_testing_List(&A4);
-            else if (i1==321)
-                Manual_testing_List(&V1);
-            else if (i1==322)
-                Manual_testing_List(&V2);
-            else if (i1==323)
-                Manual_testing_List(&V3);
-            else if (i1==324)
-                Manual_testing_List(&V4);
         }
     }
     else if (i1==2) {
