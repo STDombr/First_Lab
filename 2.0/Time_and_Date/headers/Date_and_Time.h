@@ -33,13 +33,6 @@ public:
      */
     void print();
     /**
-     * Operator == to compare two elements
-    * @param c1 first element
-    * @param c2 second element
-    * @return 1 if c1==c2 and 0 if c1!=c2
-    */
-
-    /**
      * function to safe entered time
      * @return 1 if valid time and 0 if invalid time
      */
