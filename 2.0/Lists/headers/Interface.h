@@ -31,6 +31,11 @@ class Interface
 {
 public:
     /**
+     * Pure virtual function that returns size of the List
+     *
+     */
+    int virtual GetSize()=0;
+    /**
      * Pure virtual function that delete all elements from the List
      *
      */

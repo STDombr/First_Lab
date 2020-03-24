@@ -27,6 +27,11 @@ public:
      */
     Vector();
     /**
+     * returns size of the List
+     *
+     */
+    int GetSize();
+    /**
      * delete all elements
      */
     void remove();

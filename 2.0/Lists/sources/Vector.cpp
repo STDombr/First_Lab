@@ -328,6 +328,11 @@ void Vector<T>::random()
         add(rand());
 }
 
+template<typename T>
+int Vector<T>::GetSize() {
+    return this->arr.size();
+}
+
 /**
      * Function that randomly generates the List of double
      */

@@ -353,6 +353,11 @@ void Array<T>::random()
         add(rand());
 }
 
+template<typename T>
+int Array<T>::GetSize() {
+    return this->size;
+}
+
 /**
      * Function that randomly generates the List of double
      */
