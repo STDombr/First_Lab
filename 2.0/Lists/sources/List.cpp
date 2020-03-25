@@ -98,23 +98,27 @@ inline void List<Date_and_Time>::print()
      * Deletes the last element of the list
      */
 template <typename T>
-void List<T>::popTail()
+T List<T>::popTail()
 {
+    T n;
     if (head==NULL)
-        return;
+        return n;
     if (head==tail)
     {
+        n=head->data;
         delete head;
         head=NULL;
         tail=NULL;
         size=0;
-        return;
+        return n;
     }
+    n=tail->data;
     Node<T> *temp = tail;
     tail=tail->prev;
     delete temp;
     tail->next=NULL;
     size--;
+    return n;
 }
 /**
      * Function that adds entered the element to the List
@@ -148,23 +152,27 @@ inline void List<Date_and_Time>::Enter_element()
      * Deletes the first element of the list
      */
 template <typename T>
-void List<T>::popHead()
+T List<T>::popHead()
 {
+    T n;
     if (head==NULL)
-        return;
+        return n;
     if (head==tail)
     {
+        n=head->data;
         delete head;
         head=NULL;
         tail=NULL;
         size=0;
-        return;
+        return n;
     }
+    n=head->data;
     Node<T> *temp=head;
     head=head->next;
     delete temp;
     head->prev=NULL;
     size--;
+    return n;
 }
 
 /**

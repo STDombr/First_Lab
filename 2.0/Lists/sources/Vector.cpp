@@ -95,20 +95,24 @@ inline void Vector<Date_and_Time>::print()
      * Deletes the last element of the list
      */
 template <typename T>
-void Vector<T>::popTail()
+T Vector<T>::popTail()
 {
+    T n=arr.back();
     arr.pop_back();
+    return n;
 }
 
 /**
      * Deletes the first element of the list
      */
 template <typename T>
-void Vector<T>::popHead()
+T Vector<T>::popHead()
 {
+    T n=arr[0];
     for(int i=1;i<arr.size();i++)
-        arr[0]=arr[1];
-    popHead();
+        arr[i-1]=arr[i];
+    arr.pop_back();
+    return n;
 }
 
 /**
@@ -121,8 +125,9 @@ template <typename T>
 T Vector<T>::element(int position)
 {
     if (arr.size()>=position)
-        return arr[position-1];
-    return 0;
+        return arr[position];
+    T n;
+    return n;
 }
 /**
     * Function that performs the quicksort algorithm

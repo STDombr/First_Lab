@@ -36,6 +36,13 @@ public:
      */
     int virtual GetSize()=0;
     /**
+     * Pure virtual function thad return elements from position
+     *
+     * @param position
+     * @return elements
+     */
+    T virtual element(int position)=0;
+    /**
      * Pure virtual function that delete all elements from the List
      *
      */
@@ -53,11 +60,11 @@ public:
     /**
      * Deletes the last element of the list
      */
-    void virtual popTail()=0;
+    T virtual popTail()=0;
     /**
      * Deletes the first element of the list
      */
-    void virtual popHead()=0;
+    T virtual popHead()=0;
     /**
      * Pure virtual function that adds entered the element to the List
      *

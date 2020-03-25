@@ -48,11 +48,11 @@ public:
     /**
      * Deletes the last element of the list
      */
-    void popTail();
+    T popTail();
     /**
      * Deletes the first element of the list
      */
-    void popHead();
+    T popHead();
     /**
      * Function that adds entered the element to the List
      *
@@ -84,14 +84,6 @@ public:
       */
     void insertionsort();
     /**
-     *The function that divides the array in two subarrays and then merges them into one in ascending order
-     *
-     * @param left The start of the first array
-     * @param m The end of the first array and the start of the second array
-     * @param right The end of the second array
-     */
-    void merge(int left,int m,int right);
-    /**
     * Function that basically calls the merge function
     *
      * @param left The start sorting
@@ -99,15 +91,6 @@ public:
      *
      */
     void mergesort(int left=1,int right=-2);
-    /**
-     +* task
-     *
-     * Function that performs the heapsort algorithm
-     *
-     * @param n count of elements
-     * @param i position of largest element
-     */
-    void heap(int n,int i);
     /**
      +* task
      *
@@ -121,15 +104,35 @@ public:
     */
     void selectionsort();
     /**
+     * Function that randomly generates the List of spec. data
+     */
+    void random();
+
+private:
+    /**
      * Function thad return reference on head
      *
      * @return reference on elements
      */
     Node<T> *gethead();
+
     /**
-     * Function that randomly generates the List of spec. data
+     *The function that divides the array in two subarrays and then merges them into one in ascending order
+     *
+     * @param left The start of the first array
+     * @param m The end of the first array and the start of the second array
+     * @param right The end of the second array
      */
-    void random();
+    void merge(int left,int m,int right);
+    /**
+     +* task
+     *
+     * Function that performs the heapsort algorithm
+     *
+     * @param n count of elements
+     * @param i position of largest element
+     */
+    void heap(int n,int i);
 };
 
 #endif //FIRST_LAB_LIST_H

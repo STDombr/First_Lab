@@ -85,26 +85,31 @@ inline void Array<Date_and_Time>::print()
      * Deletes the last element of the list
      */
 template <typename T>
-void Array<T>::popTail()
+T Array<T>::popTail()
 {
+    T n;
     if (size>=1)
     {
+        n=this->mas[size-1];
         size--;
     }
+    return n;
 }
 
 /**
      * Deletes the first element of the list
      */
 template <typename T>
-void Array<T>::popHead()
+T Array<T>::popHead()
 {
+    T n=mas[0];
     if (size>=1)
     {
         for(int i=1;i<size;i++)
             mas[i-1]=mas[i];
         size--;
     }
+    return n;
 }
 /**
      * Function that adds entered the element to the List
@@ -144,8 +149,9 @@ template <typename T>
 T Array<T>::element(int position)
 {
     if (size>=position)
-        return mas[position-1];
-    return 0;
+        return mas[position];
+    T n;
+    return n;
 }
 
 /**
