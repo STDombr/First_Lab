@@ -95,6 +95,13 @@ public:
     * @return 1 if c1>=c2 and 0 if c1<c2
     */
     friend bool operator >= (Date_and_Time c1,Date_and_Time c2);
+    /**
+     * Operator <= to compare two elements
+    * @param c1 first element
+    * @param c2 second element
+    * @return 1 if c1<=c2 and 0 if c1>c2
+    */
+    friend bool operator <= (Date_and_Time c1,Date_and_Time c2);
 };
 
 /**

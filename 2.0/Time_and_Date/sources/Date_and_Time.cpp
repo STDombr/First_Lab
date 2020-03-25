@@ -275,6 +275,21 @@ bool operator >= (Date_and_Time c1,Date_and_Time c2)
     else
         return 0;
 }
+/**
+     * Operator <= to compare two elements
+    * @param c1 first element
+    * @param c2 second element
+    * @return 1 if c1<=c2 and 0 if c1>c2
+    */
+bool operator <= (Date_and_Time c1,Date_and_Time c2)
+{
+    if (c1.D>c2.D)
+        return 0;
+    else if (c1.D==c2.D && c1.T>c2.T)
+        return 0;
+    else
+        return 1;
+}
 
 /**
      * function to minussing period time1 of saved time
