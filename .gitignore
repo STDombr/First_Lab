@@ -1,4 +1,6 @@
 .idea/
+.user/
+.bak*/
 cmake-build-debug/
 External/
 Debug/
