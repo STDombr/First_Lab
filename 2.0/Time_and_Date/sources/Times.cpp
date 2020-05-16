@@ -17,6 +17,7 @@
 #include "Times.h"
 #include <ctime>
 
+int hour_diff=3;
 /**
      * Constructor to structure Date
      */
@@ -30,7 +31,7 @@ Time::Time()
     TM t;
     t.second=0;
     t.minute=0;
-    t.hour=2;
+    t.hour=hour_diff;
     plus_to_time(t);
 }
 
@@ -93,7 +94,7 @@ void Time::yet_time()
     TM t;
     t.second=0;
     t.minute=0;
-    t.hour=2;
+    t.hour=hour_diff;
     plus_to_time(t);
 }
 

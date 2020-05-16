@@ -372,7 +372,7 @@ inline void Array<double>::random()
 {
     int r=rand()%10+5;
     for (int i=0;i<r;i++)
-        add(1.1*rand());
+        add(1.123411*rand());
 }
 
 /**
@@ -405,4 +405,19 @@ inline void Array<Date_and_Time>::random()
         d.random();
         add(d);
     }
+}
+
+/**
+     * Function thad return elements from position
+     *
+     * @param position
+     * @return elements
+     */
+template <typename T>
+T Array<T>::get_element(int position)
+{
+    if (size>=position)
+        return mas[position];
+    T n;
+    return n;
 }

@@ -436,7 +436,7 @@ inline void List<double>::random()
 {
     int r=rand()%10+5;
     for (int i=0;i<r;i++)
-        add(1.1*rand());
+        add(1.123411*rand());
 }
 
 /**
@@ -471,3 +471,18 @@ inline void List<Date_and_Time>::random()
     }
 }
 
+/**
+     * Function thad return elements from position
+     *
+     * @param position
+     * @return elements
+     */
+template <typename T>
+T List<T>::get_element(int position)
+{
+    Node<T> *temp=head;
+    if (position<=size)
+        for (int i=0;i<position;i++)
+            temp=temp->next;
+    return temp->data;
+}

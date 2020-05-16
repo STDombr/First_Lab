@@ -86,7 +86,8 @@ inline void Vector<Date_and_Time>::Enter_element()
 template <>
 inline void Vector<Date_and_Time>::print()
 {
-    for(int i=0;i<arr.size();i++)
+    int temp = arr.size();
+    for(int i=0;i<temp;i++)
         arr[i].print();
     std::cout<<std::endl;
 }
@@ -346,7 +347,7 @@ inline void Vector<double>::random()
 {
     int r=rand()%10+5;
     for (int i=0;i<r;i++)
-        add(1.1*rand());
+        add(1.123411*rand());
 }
 
 /**
@@ -378,4 +379,19 @@ inline void Vector<Date_and_Time>::random()
         t.random();
         add(t);
     }
+}
+
+/**
+     * Function thad return elements from position
+     *
+     * @param position
+     * @return elements
+     */
+template <typename T>
+T Vector<T>::get_element(int position)
+{
+    if (arr.size()>=position)
+        return arr[position];
+    T n;
+    return n;
 }

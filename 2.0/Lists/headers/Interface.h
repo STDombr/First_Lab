@@ -41,7 +41,7 @@ public:
      * @param position
      * @return elements
      */
-    T virtual element(int position)=0;
+    T virtual get_element(int position)=0;
     /**
      * Pure virtual function that delete all elements from the List
      *
@@ -70,7 +70,6 @@ public:
      *
      */
     void virtual Enter_element()=0;
-    //T virtual element(int)=0;
     /**
     * Pure virtual function that performs the quicksort algorithm
      *

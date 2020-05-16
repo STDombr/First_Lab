@@ -64,7 +64,7 @@ public:
      * @param position
      * @return elements
      */
-    T element(int position);
+    T get_element(int position);
     /**
     * Function that performs the quicksort algorithm
      *
@@ -102,6 +102,13 @@ public:
     void random();
 
 private:
+    /**
+     * Function thad return elements from position
+     *
+     * @param position
+     * @return elements
+     */
+    T element(int position);
     /**
      *The function that divides the array in two subarrays and then merges them into one in ascending order
      *

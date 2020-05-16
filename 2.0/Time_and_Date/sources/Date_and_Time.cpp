@@ -350,9 +350,9 @@ void Date_and_Time::plus_to_time(DIFF t)
 {
     int days[]={31,28,31,30,31,30,31,31,30,31,30,31};
     T.set_second(T.get_second()+t.seconds);
-    T.set_minute(T.get_minute()+T.get_second()/60);
+    T.set_minute(T.get_minute()+t.minutes+T.get_second()/60);
     T.set_second(T.get_second()%60);
-    T.set_hour(T.get_hour()+T.get_minute()/60);
+    T.set_hour(T.get_hour()+t.hours+T.get_minute()/60);
     T.set_minute(T.get_minute()%60);
     if (T.get_hour()>23)
     {

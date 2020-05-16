@@ -20,12 +20,12 @@
 /**
  * function to definition the weekday of date
  */
-void Date::weekday()
+std::string Date::weekday()
 {
     std::string s[7]={"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
     int code_of_month=dt.month+12*((14-dt.month)/12)-2;
     int code_of_year=dt.year-(14-dt.month)/12;
-    std::cout<<s[(7000+(dt.day+code_of_year+code_of_year/4-code_of_year/100+code_of_year/400+(31*code_of_month)/12))%7]<<std::endl;
+    return s[(7000+(dt.day+code_of_year+code_of_year/4-code_of_year/100+code_of_year/400+(31*code_of_month)/12))%7];
 }
 
 /**
@@ -166,7 +166,7 @@ void Date::random()
 /**
  * function to definition number of week at year for the date
  */
-void Date::num_of_week_at_year()
+int Date::num_of_week_at_year()
 {
     time_t rowTime = time(0);
     tm* ptm = localtime(&rowTime);
@@ -177,7 +177,7 @@ void Date::num_of_week_at_year()
     mktime(ptm);
     int wNum = (ptm->tm_yday + 1) / 7;
     if((ptm->tm_yday + 1) % 7) ++wNum;
-    std::cout << wNum <<std::endl;
+    return wNum;
 }
 
 

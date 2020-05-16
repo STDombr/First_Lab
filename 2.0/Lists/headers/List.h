@@ -64,7 +64,7 @@ public:
      * @param position
      * @return elements
      */
-    T element(int position);
+    T get_element(int position);
     /**
      * Function thad return reference elements from position
      *
@@ -109,6 +109,13 @@ public:
     void random();
 
 private:
+    /**
+     * Function thad return elements from position
+     *
+     * @param position
+     * @return elements
+     */
+    T element(int position);
     /**
      * Function thad return reference on head
      *

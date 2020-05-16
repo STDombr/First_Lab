@@ -15,6 +15,8 @@
 #ifndef FIRST_LAB_DATE_H
 #define FIRST_LAB_DATE_H
 
+#include <string>
+
 /**
  * Strucrure to store information of date
  */
@@ -86,7 +88,7 @@ public:
     /**
      * function to definition the weekday of date
      */
-    void weekday();
+    std::string weekday();
     /**
      * Creating information of random day,month,year
      */
@@ -96,7 +98,7 @@ public:
      *
      * function to definition number of week at year for the date
      */
-    void num_of_week_at_year();
+    int num_of_week_at_year();
 
 
     /**
