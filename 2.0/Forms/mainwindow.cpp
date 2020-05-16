@@ -14,7 +14,9 @@ extern List<int> ListInt;
 extern List<double> ListDouble;
 extern List<std::string> ListString;
 extern List<Date_and_Time> ListDate;
-
+/**
+      *This constructor created the main window
+      */
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -29,7 +31,9 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+/**
+   *Function to set new date in window
+   */
 void MainWindow::set_date()
 {
     std::string tempTime = std::to_string(DT.T.get_hour()) + ":" + std::to_string(DT.T.get_minute()) + ":" + std::to_string(DT.T.get_second());
@@ -39,26 +43,34 @@ void MainWindow::set_date()
     ui->Weekday->setText(QString::fromStdString(DT.D.weekday()));
     ui->Num_of_week->setNum(DT.D.num_of_week_at_year());
 }
-
+/**
+   *Set yet date when the button is clicked
+   */
 void MainWindow::on_Date_Yet_clicked()
 {
     DT.yet_time_and_date();
     set_date();
 }
-
+/**
+   *Set random date when the button is clicked
+   */
 void MainWindow::on_Date_Random_clicked()
 {
     DT.random();
     set_date();
 }
-
+/**
+   *Set new date when the button is clicked
+   */
 void MainWindow::on_Date_New_clicked()
 {
     SetDateAndTime *SDT = new SetDateAndTime(this);
     SDT->show();
     connect(SDT,&SetDateAndTime::signalDate,this,&MainWindow::get_new);
 }
-
+/**
+   *Function to get new date from signals
+   */
 void MainWindow::get_new(QDateTime temp)
 {
     DT2.D.set_year(temp.date().year());
@@ -70,14 +82,18 @@ void MainWindow::get_new(QDateTime temp)
     DT = DT2;
     set_date();
 }
-
+/**
+   *Open window to set second time when the button is clicked
+   */
 void MainWindow::on_Date_Plus_clicked()
 {
     SetTime *ST = new SetTime(this);
     ST->show();
     connect(ST,&SetTime::signalTime,this,&MainWindow::get_plus);
 }
-
+/**
+   *Function to get new date from signals
+   */
 void MainWindow::get_plus(QTime temp)
 {
     DIFF diff;
@@ -87,14 +103,18 @@ void MainWindow::get_plus(QTime temp)
     DT.plus_to_time(diff);
     set_date();
 }
-
+/**
+   *Open window to set second time when the button is clicked
+   */
 void MainWindow::on_Date_Minus_clicked()
 {
     SetTime *ST = new SetTime(this);
     ST->show();
     connect(ST,&SetTime::signalTime,this,&MainWindow::get_minus);
 }
-
+/**
+   *Function to get new date from signals
+   */
 void MainWindow::get_minus(QTime temp)
 {
     DIFF diff;
@@ -104,7 +124,9 @@ void MainWindow::get_minus(QTime temp)
     DT.minus_to_time(diff);
     set_date();
 }
-
+/**
+   *Function to add elements to List
+   */
 void MainWindow::add_list()
 {
     if (radio==1)
@@ -142,7 +164,9 @@ void MainWindow::add_list()
 
     ui->List->setCurrentRow(0);
 }
-
+/**
+   *Set random list when the button is clicked
+   */
 void MainWindow::on_List_Random_clicked()
 {
     if (radio==1)
@@ -170,31 +194,41 @@ void MainWindow::on_List_Random_clicked()
     ui->List->setCurrentRow(0);
 }
 
-
+/**
+   *Set Int in radio when the button is clicked
+   */
 void MainWindow::on_Radio_Int_clicked()
 {
     on_List_Delete_clicked();
     radio = 1;
 }
-
+/**
+   *Set Double in radio when the button is clicked
+   */
 void MainWindow::on_Radio_Double_clicked()
 {
     on_List_Delete_clicked();
     radio = 2;
 }
-
+/**
+   *Set String in radio when the button is clicked
+   */
 void MainWindow::on_Radio_String_clicked()
 {
     on_List_Delete_clicked();
     radio = 3;
 }
-
+/**
+   *Set Date and Time in radio when the button is clicked
+   */
 void MainWindow::on_Radio_Date_clicked()
 {
     on_List_Delete_clicked();
     radio = 4;
 }
-
+/**
+   *Delete all elements when the button is clicked
+   */
 void MainWindow::on_List_Delete_clicked()
 {
     ui->List->clear();
@@ -207,7 +241,9 @@ void MainWindow::on_List_Delete_clicked()
     else if (radio==4)
             ListDate.remove();
 }
-
+/**
+   *Delete first element when the button is clicked
+   */
 void MainWindow::on_List_Pop_Head_clicked()
 {
     delete ui->List->takeItem(0);
@@ -220,7 +256,9 @@ void MainWindow::on_List_Pop_Head_clicked()
     else if (radio==4)
             ListDate.popHead();
 }
-
+/**
+   *Delete last element when the button is clicked
+   */
 void MainWindow::on_List_Pop_Tail_clicked()
 {
     if (radio==1)
@@ -244,7 +282,9 @@ void MainWindow::on_List_Pop_Tail_clicked()
             ListDate.popTail();
     }
 }
-
+/**
+   *Sort elements on List when the button is clicked
+   */
 void MainWindow::on_List_Sort_clicked()
 {
     if (radio==1)
@@ -257,7 +297,9 @@ void MainWindow::on_List_Sort_clicked()
             ListDate.heapsort();
     add_list();
 }
-
+/**
+   *Open window to set new element when the button is clicked
+   */
 void MainWindow::on_List_Add_clicked()
 {
     if (radio==4)
@@ -273,7 +315,9 @@ void MainWindow::on_List_Add_clicked()
         connect(AE,&AddElement::signalElement,this,&MainWindow::add_element);
     }
 }
-
+/**
+   *Function to add new element
+   */
 void MainWindow::add_element(QString temp)
 {
     if (radio==1)
@@ -292,7 +336,9 @@ void MainWindow::add_element(QString temp)
         ui->List->addItem(temp);
     }
 }
-
+/**
+   *Function to add new date
+   */
 void MainWindow::add_date(QDateTime temp)
 {
     Date_and_Time d;

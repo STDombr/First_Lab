@@ -5,7 +5,9 @@
 #include <iostream>
 
 extern int radio;
-
+/**
+      *This constructor created window to set element
+      */
 AddElement::AddElement(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AddElement)
@@ -17,7 +19,9 @@ AddElement::~AddElement()
 {
     delete ui;
 }
-
+/**
+   *Set element when the button is clicked
+   */
 void AddElement::on_set_clicked()
 {
     std::string temp = ui->lineEdit->text().toStdString();
@@ -65,7 +69,9 @@ void AddElement::on_set_clicked()
         }
     }
 }
-
+/**
+   *Function that check if the number is int
+   */
 bool is_int(std::string temp)
 {
     if (temp == "")
@@ -77,6 +83,9 @@ bool is_int(std::string temp)
     return 1;
 }
 
+/**
+   *Function that check if the number is double
+   */
 bool is_double(std::string in)
 {
     std::istringstream iss(in);
