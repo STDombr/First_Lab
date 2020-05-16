@@ -1,5 +1,4 @@
 .idea/
-cmake-build-debug/
 External/
 Debug/
 Docs/
@@ -7,7 +6,7 @@ Release/
 build/
 bin/
 out/
-cmake-build-*/
+*build*/
 
 CMakeCache.txt
 CMakeFiles
