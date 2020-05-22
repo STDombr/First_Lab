@@ -7,12 +7,11 @@
 
 using namespace std;
 
-List<int> ListInt;
-List<double> ListDouble;
-List<std::string> ListString;
-List<Date_and_Time> ListDate;
+List<double> L1;
+Array<double> L2;
+Vector<double> L3;
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
    srand(time(0));
    int temp;
@@ -32,5 +31,5 @@ int main(int argc, char* argv[])
         return a.exec();
     }
 
-    return 0;
+   return 0;
 }

@@ -478,11 +478,35 @@ inline void List<Date_and_Time>::random()
      * @return elements
      */
 template <typename T>
-T List<T>::get_element(int position)
+std::string List<T>::get_element(int position)
 {
     Node<T> *temp=head;
     if (position<=size)
         for (int i=0;i<position;i++)
             temp=temp->next;
+    return std::to_string(temp->data);
+}
+
+template <>
+inline std::string List<std::string>::get_element(int position)
+{
+    Node<std::string> *temp=head;
+    if (position<=size)
+        for (int i=0;i<position;i++)
+            temp=temp->next;
     return temp->data;
+}
+
+template <>
+inline std::string List<Date_and_Time>::get_element(int position)
+{
+    Node<Date_and_Time> *temp=head;
+    if (position<=size)
+        for (int i=0;i<position;i++)
+            temp=temp->next;
+    std::string tempTime;
+    std::string tempDate;
+    tempTime = std::to_string(temp->data.T.get_hour()) + ":" + std::to_string(temp->data.T.get_minute()) + ":" + std::to_string(temp->data.T.get_second());
+    tempDate = std::to_string(temp->data.D.get_day()) + "." + std::to_string(temp->data.D.get_month()) + "." + std::to_string(temp->data.D.get_year());
+    return (tempTime + " " + tempDate);
 }

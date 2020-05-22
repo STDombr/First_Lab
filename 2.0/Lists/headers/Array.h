@@ -11,6 +11,7 @@
 #ifndef FIRST_LAB_ARRAY_H
 #define FIRST_LAB_ARRAY_H
 #include "Interface.h"
+#include <string>
 
 /**
  * Template interface structure for the List structure that is based on the array
@@ -65,7 +66,7 @@ public:
      * @param position
      * @return elements
      */
-    T get_element(int position);
+    std::string get_element(int position);
     /**
     * Function that performs the quicksort algorithm
      *
@@ -101,15 +102,15 @@ public:
      * Function that randomly generates the List of spec. data
      */
     void random();
-
-private:
-    /**
+/**
      * Function thad return elements from position
      *
      * @param position
      * @return elements
      */
     T element(int position);
+private:
+
     /**
      *The function that divides the array in two subarrays and then merges them into one in ascending order
      *

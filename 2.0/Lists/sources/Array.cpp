@@ -22,10 +22,10 @@
 template <typename T>
 Array<T>::Array()
 {
-    T *mas=new T[30];
     size=0;
     max_size=30;
 }
+
 
 /**
      * delete all elements
@@ -414,10 +414,34 @@ inline void Array<Date_and_Time>::random()
      * @return elements
      */
 template <typename T>
-T Array<T>::get_element(int position)
+std::string Array<T>::get_element(int position)
+{
+    if (size>=position)
+        return std::to_string(mas[position]);
+    T n;
+    return std::to_string(n);
+}
+
+template <>
+inline std::string Array<std::string>::get_element(int position)
 {
     if (size>=position)
         return mas[position];
-    T n;
+    std::string n;
+    return n;
+}
+
+template <>
+inline std::string Array<Date_and_Time>::get_element(int position)
+{
+    if (size>=position)
+    {
+        std::string tempTime;
+        std::string tempDate;
+        tempTime = std::to_string(mas[position].T.get_hour()) + ":" + std::to_string(mas[position].T.get_minute()) + ":" + std::to_string(mas[position].T.get_second());
+        tempDate = std::to_string(mas[position].D.get_day()) + "." + std::to_string(mas[position].D.get_month()) + "." + std::to_string(mas[position].D.get_year());
+        return (tempTime + " " + tempDate);
+    }
+    std::string n;
     return n;
 }

@@ -388,10 +388,34 @@ inline void Vector<Date_and_Time>::random()
      * @return elements
      */
 template <typename T>
-T Vector<T>::get_element(int position)
+std::string Vector<T>::get_element(int position)
+{
+    if (arr.size()>=position)
+        return std::to_string(arr[position]);
+    T n;
+    return std::to_string(n);
+}
+
+template <>
+inline std::string Vector<std::string>::get_element(int position)
 {
     if (arr.size()>=position)
         return arr[position];
-    T n;
+    std::string n;
+    return n;
+}
+
+template <>
+inline std::string Vector<Date_and_Time>::get_element(int position)
+{
+    if (arr.size()>=position)
+    {
+        std::string tempTime;
+        std::string tempDate;
+        tempTime = std::to_string(arr[position].T.get_hour()) + ":" + std::to_string(arr[position].T.get_minute()) + ":" + std::to_string(arr[position].T.get_second());
+        tempDate = std::to_string(arr[position].D.get_day()) + "." + std::to_string(arr[position].D.get_month()) + "." + std::to_string(arr[position].D.get_year());
+        return (tempTime + " " + tempDate);
+    }
+    std::string n;
     return n;
 }

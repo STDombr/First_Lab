@@ -11,7 +11,7 @@
 
 #ifndef FIRST_LAB_INTERFACE_H
 #define FIRST_LAB_INTERFACE_H
-
+#include <string>
 /**
  * Template Node structure that is used in the List structure
  */
@@ -41,7 +41,7 @@ public:
      * @param position
      * @return elements
      */
-    T virtual get_element(int position)=0;
+    std::string virtual get_element(int position)=0;
     /**
      * Pure virtual function that delete all elements from the List
      *

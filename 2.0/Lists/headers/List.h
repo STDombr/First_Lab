@@ -11,6 +11,7 @@
 #ifndef FIRST_LAB_LIST_H
 #define FIRST_LAB_LIST_H
 #include "Interface.h"
+#include <string>
 
 /**
  * Template interface structure for the List structure that is based on the Linked lists
@@ -64,7 +65,7 @@ public:
      * @param position
      * @return elements
      */
-    T get_element(int position);
+    std::string get_element(int position);
     /**
      * Function thad return reference elements from position
      *
@@ -107,15 +108,15 @@ public:
      * Function that randomly generates the List of spec. data
      */
     void random();
-
-private:
-    /**
+/**
      * Function thad return elements from position
      *
      * @param position
      * @return elements
      */
     T element(int position);
+private:
+
     /**
      * Function thad return reference on head
      *

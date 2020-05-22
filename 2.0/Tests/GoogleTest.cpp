@@ -51,17 +51,17 @@ TEST_F(ListTest, SortWorks) {
     l_3.heapsort();
     int n=l_3.GetSize();
     for(int i=0;i<n-1;i++)
-        ASSERT_LE(l_3.get_element(i),l_3.get_element(i+1));
+        ASSERT_LE(l_3.element(i),l_3.element(i+1));
 
     l_4.quicksort();
     n=l_4.GetSize();
     for(int i=0;i<n-1;i++)
-        ASSERT_LE(l_4.get_element(i),l_4.get_element(i+1));
+        ASSERT_LE(l_4.element(i),l_4.element(i+1));
 
     l_5.selectionsort();
     n=l_5.GetSize();
     for(int i=0;i<n-1;i++)
-        ASSERT_TRUE(l_5.get_element(i)<=l_5.get_element(i+1));
+        ASSERT_TRUE(l_5.element(i)<=l_5.element(i+1));
 }
 
 class ArrayTest : public ::testing::Test{
@@ -110,17 +110,17 @@ TEST_F(ArrayTest, SortWorks) {
     a_3.heapsort();
     int n=a_3.GetSize();
     for(int i=0;i<n-1;i++)
-        ASSERT_LE(a_3.get_element(i),a_3.get_element(i+1));
+        ASSERT_LE(a_3.element(i),a_3.element(i+1));
 
     a_4.quicksort();
     n=a_4.GetSize();
     for(int i=0;i<n-1;i++)
-        ASSERT_LE(a_4.get_element(i),a_4.get_element(i+1));
+        ASSERT_LE(a_4.element(i),a_4.element(i+1));
 
     a_5.selectionsort();
     n=a_5.GetSize();
     for(int i=0;i<n-1;i++)
-        ASSERT_TRUE(a_5.get_element(i)<=a_5.get_element(i+1));
+        ASSERT_TRUE(a_5.element(i)<=a_5.element(i+1));
 }
 
 class VectorTest : public ::testing::Test{
@@ -169,15 +169,15 @@ TEST_F(VectorTest, SortWorks) {
     v_3.heapsort();
     int n=v_3.GetSize();
     for(int i=0;i<n-1;i++)
-        ASSERT_LE(v_3.get_element(i),v_3.get_element(i+1));
+        ASSERT_LE(v_3.element(i),v_3.element(i+1));
 
     v_4.quicksort();
     n=v_4.GetSize();
     for(int i=0;i<n-1;i++)
-        ASSERT_LE(v_4.get_element(i),v_4.get_element(i+1));
+        ASSERT_LE(v_4.element(i),v_4.element(i+1));
 
     v_5.selectionsort();
     n=v_5.GetSize();
     for(int i=0;i<n-1;i++)
-        ASSERT_TRUE(v_5.get_element(i)<=v_5.get_element(i+1));
+        ASSERT_TRUE(v_5.element(i)<=v_5.element(i+1));
 }
