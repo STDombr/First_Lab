@@ -8,12 +8,19 @@
 #include "addelement.h"
 #include "settime.h"
 
-int radio = 1;
-Date_and_Time DT,DT2;
-extern List<int> ListInt;
-extern List<double> ListDouble;
-extern List<std::string> ListString;
-extern List<Date_and_Time> ListDate;
+int radio_link = 1;
+int radio_data = 1;
+
+
+int temp1;
+double temp2;
+std::string temp3;
+Date_and_Time DT,DT2,temp4;
+
+
+template<typename T>
+Interface<T> *I;
+
 /**
       *This constructor created the main window
       */
@@ -23,6 +30,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->Radio_List->click();
     ui->Radio_Int->click();
     set_date();
 }
@@ -51,6 +59,9 @@ void MainWindow::on_Date_Yet_clicked()
     DT.yet_time_and_date();
     set_date();
 }
+extern List<double> L1;
+extern Array<double> L2;
+extern Vector<double> L3;
 /**
    *Set random date when the button is clicked
    */
@@ -127,70 +138,49 @@ void MainWindow::get_minus(QTime temp)
 /**
    *Function to add elements to List
    */
-void MainWindow::add_list()
+template<typename T>
+void MainWindow::add_list(Interface<T> *temp)
 {
-    if (radio==1)
-    {
-        ui->List->clear();
-        for(int i=0;i<ListInt.GetSize();i++)
-            ui->List->addItem(QString::fromStdString(std::to_string(ListInt.get_element(i))));
-    }
-    else if (radio==2)
-    {
-        ui->List->clear();
-        for(int i=0;i<ListDouble.GetSize();i++)
-            ui->List->addItem(QString::fromStdString(std::to_string(ListDouble.get_element(i))));
-    }
-    else if (radio==3)
-    {
-        ui->List->clear();
-        for(int i=0;i<ListString.GetSize();i++)
-            ui->List->addItem(QString::fromStdString(ListString.get_element(i)));
-    }
-    else
-    {
-        ui->List->clear();
-        std::string tempTime;
-        std::string tempDate;
-        Date_and_Time temp;
-        for(int i=0;i<ListDate.GetSize();i++)
-        {
-            temp = ListDate.get_element(i);
-            tempTime = std::to_string(temp.T.get_hour()) + ":" + std::to_string(temp.T.get_minute()) + ":" + std::to_string(temp.T.get_second());
-            tempDate = std::to_string(temp.D.get_day()) + "." + std::to_string(temp.D.get_month()) + "." + std::to_string(temp.D.get_year());
-            ui->List->addItem(QString::fromStdString(tempTime + " " + tempDate));
-        }
-    }
-
+    ui->List->clear();
+    for(int i=0;i<I<T>->GetSize();i++)
+        ui->List->addItem(QString::fromStdString(temp->get_element(i)));
     ui->List->setCurrentRow(0);
 }
+
+
+
+template<typename T>
+void set_random(Interface<T> *temp)
+{
+    temp->remove();
+    temp->random();
+}
+
 /**
    *Set random list when the button is clicked
    */
 void MainWindow::on_List_Random_clicked()
 {
-    if (radio==1)
+    if (radio_data == 1)
     {
-        ListInt.remove();
-        ListInt.random();
+        set_random(I<int>);
+        add_list(I<int>);
     }
-    else if (radio==2)
+    else if (radio_data == 2)
     {
-        ListDouble.remove();
-        ListDouble.random();
+        set_random(I<double>);
+        add_list(I<double>);
     }
-    else if (radio==3)
+    else if (radio_data == 3)
     {
-        ListString.remove();
-        ListString.random();
+        set_random(I<std::string>);
+        add_list(I<std::string>);
     }
-    else if (radio==4)
+    else if (radio_data == 4)
     {
-        ListDate.remove();
-        ListDate.random();
+        set_random(I<Date_and_Time>);
+        add_list(I<Date_and_Time>);
     }
-
-    add_list();
     ui->List->setCurrentRow(0);
 }
 
@@ -199,147 +189,217 @@ void MainWindow::on_List_Random_clicked()
    */
 void MainWindow::on_Radio_Int_clicked()
 {
-    on_List_Delete_clicked();
-    radio = 1;
+    ui->List->clear();
+    if (radio_link == 1)
+    {
+        List<int> *temp = new List<int>;
+        I<int> = temp;
+    }
+    else if (radio_link == 2)
+    {
+        Array<int> *temp = new Array<int>;
+        I<int> = temp;
+    }
+    else if (radio_link == 3)
+    {
+        Vector<int> *temp = new Vector<int>;
+        I<int> = temp;
+    }
+    radio_data = 1;
 }
 /**
    *Set Double in radio when the button is clicked
    */
 void MainWindow::on_Radio_Double_clicked()
 {
-    on_List_Delete_clicked();
-    radio = 2;
+    ui->List->clear();
+    if (radio_link == 1)
+    {
+        L1.remove();
+        I<double> = &L1;
+    }
+    else if (radio_link == 2)
+    {
+        L2.remove();
+        I<double> = &L2;
+    }
+    else if (radio_link == 3)
+    {
+        L3.remove();
+        I<double> = &L3;
+    }
+    radio_data = 2;
 }
 /**
    *Set String in radio when the button is clicked
    */
 void MainWindow::on_Radio_String_clicked()
 {
-    on_List_Delete_clicked();
-    radio = 3;
+    ui->List->clear();
+    if (radio_link == 1)
+    {
+        List<std::string> *temp = new List<std::string>;
+        I<std::string> = temp;
+    }
+    else if (radio_link == 2)
+    {
+        Array<std::string> *temp = new Array<std::string>;
+        I<std::string> = temp;
+    }
+    else if (radio_link == 3)
+    {
+        Vector<std::string> *temp = new Vector<std::string>;
+        I<std::string> = temp;
+    }
+    radio_data = 3;
 }
 /**
    *Set Date and Time in radio when the button is clicked
    */
 void MainWindow::on_Radio_Date_clicked()
 {
-    on_List_Delete_clicked();
-    radio = 4;
+    ui->List->clear();
+    if (radio_link == 1)
+    {
+        List<Date_and_Time> *temp = new List<Date_and_Time>;
+        I<Date_and_Time> = temp;
+    }
+    else if (radio_link == 2)
+    {
+        Array<Date_and_Time> *temp = new Array<Date_and_Time>;
+        I<Date_and_Time> = temp;
+    }
+    else if (radio_link == 3)
+    {
+        Vector<Date_and_Time> *temp = new Vector<Date_and_Time>;
+        I<Date_and_Time> = temp;
+    }
+    radio_data = 4;
 }
+
 /**
    *Delete all elements when the button is clicked
    */
 void MainWindow::on_List_Delete_clicked()
 {
     ui->List->clear();
-    if (radio==1)
-            ListInt.remove();
-    else if (radio==2)
-            ListDouble.remove();
-    else if (radio==3)
-            ListString.remove();
-    else if (radio==4)
-            ListDate.remove();
+    if (radio_data == 1)
+        I<int>->remove();
+    else if (radio_data == 2)
+        I<double>->remove();
+    else if (radio_data == 3)
+        I<std::string>->remove();
+    else if (radio_data == 4)
+        I<Date_and_Time>->remove();
 }
+
 /**
    *Delete first element when the button is clicked
    */
 void MainWindow::on_List_Pop_Head_clicked()
 {
     delete ui->List->takeItem(0);
-    if (radio==1)
-            ListInt.popHead();
-    else if (radio==2)
-            ListDouble.popHead();
-    else if (radio==3)
-            ListString.popHead();
-    else if (radio==4)
-            ListDate.popHead();
+    if (radio_data == 1)
+        I<int>->popHead();
+    else if (radio_data == 2)
+        I<double>->popHead();
+    else if (radio_data == 3)
+        I<std::string>->popHead();
+    else if (radio_data == 4)
+        I<Date_and_Time>->popHead();
 }
+
+template<typename T>
+void MainWindow::pop_tail(Interface<T> *temp)
+{
+    delete ui->List->takeItem(I<T>->GetSize()-1);
+    temp->popTail();
+}
+
 /**
    *Delete last element when the button is clicked
    */
 void MainWindow::on_List_Pop_Tail_clicked()
 {
-    if (radio==1)
-    {
-        delete ui->List->takeItem(ListInt.GetSize()-1);
-        ListInt.popTail();
-    }
-    else if (radio==2)
-    {
-        delete ui->List->takeItem(ListDouble.GetSize()-1);
-        ListDouble.popTail();
-    }
-    else if (radio==3)
-    {
-        delete ui->List->takeItem(ListString.GetSize()-1);
-        ListString.popTail();
-    }
-    else
-    {
-            delete ui->List->takeItem(ListDate.GetSize()-1);
-            ListDate.popTail();
-    }
+    if (radio_data == 1)
+        pop_tail(I<int>);
+    else if (radio_data == 2)
+        pop_tail(I<double>);
+    else if (radio_data == 3)
+        pop_tail(I<std::string>);
+    else if (radio_data == 4)
+        pop_tail(I<Date_and_Time>);
 }
+
+template<typename T>
+void sort(Interface<T> *temp)
+{
+    temp->heapsort();
+}
+
 /**
    *Sort elements on List when the button is clicked
    */
 void MainWindow::on_List_Sort_clicked()
 {
-    if (radio==1)
-            ListInt.heapsort();
-    else if (radio==2)
-            ListDouble.heapsort();
-    else if (radio==3)
-            ListString.heapsort();
-    else if (radio==4)
-            ListDate.heapsort();
-    add_list();
+    if (radio_data == 1)
+    {
+        sort(I<int>);
+        add_list(I<int>);
+    }
+    else if (radio_data == 2)
+    {
+        sort(I<double>);
+        add_list(I<double>);
+    }
+    else if (radio_data == 3)
+    {
+        sort(I<std::string>);
+        add_list(I<std::string>);
+    }
+    else if (radio_data == 4)
+    {
+        sort(I<Date_and_Time>);
+        add_list(I<Date_and_Time>);
+    }
 }
 /**
    *Open window to set new element when the button is clicked
    */
 void MainWindow::on_List_Add_clicked()
 {
-    if (radio==4)
+    if (radio_data==4)
     {
         SetDateAndTime *SDT = new SetDateAndTime(this);
         SDT->show();
-        connect(SDT,&SetDateAndTime::signalDate,this,&MainWindow::add_date);
+        connect(SDT,&SetDateAndTime::signalDate,this,&MainWindow::connect_date);
     }
     else
     {
         AddElement *AE = new AddElement(this);
         AE->show();
-        connect(AE,&AddElement::signalElement,this,&MainWindow::add_element);
+        connect(AE,&AddElement::signalElement,this,&MainWindow::connect_element);
     }
 }
+
 /**
    *Function to add new element
    */
-void MainWindow::add_element(QString temp)
+void MainWindow::connect_element(QString temp)
 {
-    if (radio==1)
-    {
-        ListInt.add(temp.toInt());
-        ui->List->addItem(temp);
-    }
-    else if (radio==2)
-    {
-        ListDouble.add(temp.toDouble());
-        ui->List->addItem(temp);
-    }
-    else if (radio==3)
-    {
-        ListString.add(temp.toStdString());
-        ui->List->addItem(temp);
-    }
+    if (radio_data == 1)
+        I<int>->add(temp.toInt());
+    else if (radio_data == 2)
+        I<double>->add(temp.toDouble());
+    else if (radio_data == 3)
+        I<std::string>->add(temp.toStdString());
+    ui->List->addItem(temp);
 }
+
 /**
    *Function to add new date
    */
-void MainWindow::add_date(QDateTime temp)
+void MainWindow::connect_date(QDateTime temp)
 {
     Date_and_Time d;
     std::string tempTime, tempDate;
@@ -349,8 +409,86 @@ void MainWindow::add_date(QDateTime temp)
     d.T.set_hour(temp.time().hour());
     d.T.set_minute(temp.time().minute());
     d.T.set_second(temp.time().second());
-    ListDate.add(d);
+    I<Date_and_Time>->add(d);
     tempTime = std::to_string(d.T.get_hour()) + ":" + std::to_string(d.T.get_minute()) + ":" + std::to_string(d.T.get_second());
     tempDate = std::to_string(d.D.get_day()) + "." + std::to_string(d.D.get_month()) + "." + std::to_string(d.D.get_year());
     ui->List->addItem(QString::fromStdString(tempTime + " " + tempDate));
+}
+
+void MainWindow::on_Radio_List_clicked()
+{
+    ui->List->clear();
+    if (radio_data == 1)
+    {
+        List<int> *temp = new List<int>;
+        I<int> = temp;
+    }
+    else if (radio_data == 2)
+    {
+        L1.remove();
+        I<double> = &L1;
+    }
+    else if (radio_data == 3)
+    {
+        List<std::string> *temp = new List<std::string>;
+        I<std::string> = temp;
+    }
+    else if (radio_data == 4)
+    {
+        List<Date_and_Time> *temp = new List<Date_and_Time>;
+        I<Date_and_Time> = temp;
+    }
+    radio_link = 1;
+}
+
+void MainWindow::on_Radio_Array_clicked()
+{
+    ui->List->clear();
+    if (radio_data == 1)
+    {
+        Array<int> *temp = new Array<int>;
+        I<int> = temp;
+    }
+    else if (radio_data == 2)
+    {
+        L2.remove();
+        I<double> = &L2;
+    }
+    else if (radio_data == 3)
+    {
+        Array<std::string> *temp = new Array<std::string>;
+        I<std::string> = temp;
+    }
+    else if (radio_data == 4)
+    {
+        Array<Date_and_Time> *temp = new Array<Date_and_Time>;
+        I<Date_and_Time> = temp;
+    }
+    radio_link = 2;
+}
+
+void MainWindow::on_Radio_Vector_clicked()
+{
+    ui->List->clear();
+    if (radio_data == 1)
+    {
+        Vector<int> *temp = new Vector<int>;
+        I<int> = temp;
+    }
+    else if (radio_data == 2)
+    {
+        L3.remove();
+        I<double> = &L3;
+    }
+    else if (radio_data == 3)
+    {
+        Vector<std::string> *temp = new Vector<std::string>;
+        I<std::string> = temp;
+    }
+    else if (radio_data == 4)
+    {
+        Vector<Date_and_Time> *temp = new Vector<Date_and_Time>;
+        I<Date_and_Time> = temp;
+    }
+    radio_link = 1;
 }

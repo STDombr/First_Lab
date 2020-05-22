@@ -4,7 +4,7 @@
 #include <sstream>
 #include <iostream>
 
-extern int radio;
+extern int radio_data;
 /**
       *This constructor created window to set element
       */
@@ -25,7 +25,7 @@ AddElement::~AddElement()
 void AddElement::on_set_clicked()
 {
     std::string temp = ui->lineEdit->text().toStdString();
-    if (radio==1)
+    if (radio_data==1)
     {
         if (is_int(temp))
         {
@@ -40,7 +40,7 @@ void AddElement::on_set_clicked()
             msgBox.exec();
         }
     }
-    else if (radio==2)
+    else if (radio_data==2)
     {
         if (is_double(temp))
         {
@@ -54,7 +54,7 @@ void AddElement::on_set_clicked()
             msgBox.exec();
         }
     }
-    else if (radio==3)
+    else if (radio_data==3)
     {
         if (temp == "")
         {

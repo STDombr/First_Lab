@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QDateTime>
 #include "List.h"
+#include "Array.h"
+#include "Vector.h"
 #include "Interface.h"
 
 namespace Ui {
@@ -42,18 +44,22 @@ private:
        *Function to get new date from signals
        */
     void get_minus(QTime temp);
+
+    template<typename T>
+    void pop_tail(Interface<T> *temp);
     /**
        *Function to add elements to List
        */
-    void add_list();
+    template<typename T>
+    void add_list(Interface<T> *temp);
     /**
        *Function to add new element
        */
-    void add_element(QString temp);
+    void connect_element(QString temp);
     /**
        *Function to add new date
        */
-    void add_date(QDateTime temp);
+    void connect_date(QDateTime temp);
 private slots:
     /**
        *Set yet date when the button is clicked
@@ -115,6 +121,9 @@ private slots:
        *Open window to set new element when the button is clicked
        */
     void on_List_Add_clicked();
+    void on_Radio_List_clicked();
+    void on_Radio_Array_clicked();
+    void on_Radio_Vector_clicked();
 };
 
 #endif // MAINWINDOW_H
