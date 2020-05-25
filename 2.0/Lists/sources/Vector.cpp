@@ -98,8 +98,12 @@ inline void Vector<Date_and_Time>::print()
 template <typename T>
 T Vector<T>::popTail()
 {
-    T n=arr.back();
-    arr.pop_back();
+    T n;
+    if (arr.size()>0)
+    {
+        n=arr.back();
+        arr.pop_back();
+    }
     return n;
 }
 
@@ -109,10 +113,14 @@ T Vector<T>::popTail()
 template <typename T>
 T Vector<T>::popHead()
 {
-    T n=arr[0];
-    for(int i=1;i<arr.size();i++)
-        arr[i-1]=arr[i];
-    arr.pop_back();
+    T n;
+    if (arr.size()>0)
+    {
+        n=arr[0];
+        for(int i=1;i<arr.size();i++)
+            arr[i-1]=arr[i];
+        arr.pop_back();
+    }
     return n;
 }
 
