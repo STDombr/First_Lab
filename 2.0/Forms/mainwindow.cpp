@@ -7,6 +7,7 @@
 #include "setdateandtime.h"
 #include "addelement.h"
 #include "settime.h"
+#include <QDialog>
 
 int radio_link = 1;
 int radio_data = 1;
@@ -76,6 +77,7 @@ void MainWindow::on_Date_Random_clicked()
 void MainWindow::on_Date_New_clicked()
 {
     SetDateAndTime *SDT = new SetDateAndTime(this);
+    SDT->setWindowModality(Qt::ApplicationModal);
     SDT->show();
     connect(SDT,&SetDateAndTime::signalDate,this,&MainWindow::get_new);
 }
@@ -99,6 +101,7 @@ void MainWindow::get_new(QDateTime temp)
 void MainWindow::on_Date_Plus_clicked()
 {
     SetTime *ST = new SetTime(this);
+    ST->setWindowModality(Qt::ApplicationModal);
     ST->show();
     connect(ST,&SetTime::signalTime,this,&MainWindow::get_plus);
 }
@@ -120,6 +123,7 @@ void MainWindow::get_plus(QTime temp)
 void MainWindow::on_Date_Minus_clicked()
 {
     SetTime *ST = new SetTime(this);
+    ST->setWindowModality(Qt::ApplicationModal);
     ST->show();
     connect(ST,&SetTime::signalTime,this,&MainWindow::get_minus);
 }
@@ -371,12 +375,14 @@ void MainWindow::on_List_Add_clicked()
     if (radio_data==4)
     {
         SetDateAndTime *SDT = new SetDateAndTime(this);
+        SDT->setWindowModality(Qt::ApplicationModal);
         SDT->show();
         connect(SDT,&SetDateAndTime::signalDate,this,&MainWindow::connect_date);
     }
     else
     {
         AddElement *AE = new AddElement(this);
+        AE->setWindowModality(Qt::ApplicationModal);
         AE->show();
         connect(AE,&AddElement::signalElement,this,&MainWindow::connect_element);
     }

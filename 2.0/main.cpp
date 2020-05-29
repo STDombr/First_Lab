@@ -4,6 +4,7 @@
 #include "Test.cpp"
 #include <QtWidgets/QApplication>
 #include "mainwindow.h"
+#include <chrono>
 
 using namespace std;
 
@@ -30,6 +31,13 @@ int main(int argc, char *argv[])
         w.show();
         return a.exec();
     }
+   /*
+   List<int> Test;
 
+    auto begin = std::chrono::steady_clock::now();
+    Test.random();
+    auto end = std::chrono::steady_clock::now();
+
+    std::cout<<std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count()<<std::endl;*/
    return 0;
 }
